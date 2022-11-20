@@ -16,16 +16,19 @@
         android:layout_weight="0.1"
         android:orientation="horizontal">
         <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="iPhone 13 Pro Max"
             android:paddingLeft="25dp"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_weight="2"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Like!"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_weight="1"/>
     </LinearLayout>
 
     <TableLayout
