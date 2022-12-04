@@ -24,4 +24,16 @@
         android:name="com.example.cougarsgo.Detail_LowVisionFragment"
         android:label="fragment_detail__low_vision"
         tools:layout="@layout/fragment_detail__low_vision" />
+    <action
+        android:id="@+id/action_global_list_NormalFragment"
+        app:destination="@id/list_NormalFragment" />
+    <action
+        android:id="@+id/action_global_list_LowVisionFragment"
+        app:destination="@id/list_LowVisionFragment" />
+    <action
+        android:id="@+id/action_global_detail_NormalFragment"
+        app:destination="@id/detail_NormalFragment" />
+    <action
+        android:id="@+id/action_global_detail_LowVisionFragment"
+        app:destination="@id/detail_LowVisionFragment" />
 </navigation>
