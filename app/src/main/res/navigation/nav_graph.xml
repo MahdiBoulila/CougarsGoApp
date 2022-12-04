@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/list_NormalFragment">
+    <fragment
+        android:id="@+id/detail_NormalFragment"
+        android:name="com.example.cougarsgo.Detail_NormalFragment"
+        android:label="fragment_detail__normal"
+        tools:layout="@layout/fragment_detail__normal" />
+    <fragment
+        android:id="@+id/list_NormalFragment"
+        android:name="com.example.cougarsgo.List_NormalFragment"
+        android:label="fragment_list__normal"
+        tools:layout="@layout/fragment_list__normal" />
+    <fragment
+        android:id="@+id/list_LowVisionFragment"
+        android:name="com.example.cougarsgo.list_LowVisionFragment"
+        android:label="fragment_list__low_vision"
+        tools:layout="@layout/fragment_list__low_vision" />
+    <fragment
+        android:id="@+id/detail_LowVisionFragment"
+        android:name="com.example.cougarsgo.Detail_LowVisionFragment"
+        android:label="fragment_detail__low_vision"
+        tools:layout="@layout/fragment_detail__low_vision" />
+</navigation>
