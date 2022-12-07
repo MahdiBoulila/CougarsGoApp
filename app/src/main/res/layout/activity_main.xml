@@ -4,18 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:orientation="vertical"
     tools:context=".MainActivity">
-
-
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:background="@drawable/homepage_background">
-
         <TableRow>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -24,14 +19,11 @@
                 android:layout_weight="1"
                 android:text="WELCOME"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="70dp"
                 android:textStyle="bold" />
-
         </TableRow>
     </TableLayout>
-
-
     <fragment
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -41,6 +33,4 @@
         android:layout_weight="5"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph" />
-
-
 </LinearLayout>
