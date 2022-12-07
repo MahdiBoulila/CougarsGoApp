@@ -29,4 +29,14 @@ class ViewModel: ViewModel() {
 
     }
 
+    fun registerUser(userName: String) {
+        if (currentUser.value == null || currentUser.value?.username != userName) {
+            val user = UserModel()
+            user.username = userName
+            currentUser.value=user
+            currentUser.postValue(currentUser.value)
+        }
+    }
+
+
 }

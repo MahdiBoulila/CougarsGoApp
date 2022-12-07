@@ -5,3 +5,7 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
     id 'com.google.gms.google-services' version '4.3.13'
 }
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -6,7 +6,7 @@
     tools:context=".List_NormalFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_normal_recyclerView"
+        android:id="@+id/list_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="5"
