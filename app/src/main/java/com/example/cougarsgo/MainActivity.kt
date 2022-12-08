@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.navigation.findNavController
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         else if (item.itemId == R.id.menu_signup) {
+            findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_signupFragment)
             Toast.makeText(this, "Sign Up Selected", Toast.LENGTH_SHORT).show()
             return true
         }

@@ -4,7 +4,7 @@ class ListingModel(
     var id: Int,
     var name: String,
     var description: String,
-    var seller: UserModel,
+    var sellerID: Int,
     var price: Int,
     var color: String
 ) {

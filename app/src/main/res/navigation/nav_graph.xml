@@ -3,34 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/list_NormalFragment">
+    app:startDestination="@+id/listingsFragment">
     <fragment
-        android:id="@+id/detail_NormalFragment"
-        android:name="com.example.cougarsgo.Detail_NormalFragment"
-        android:label="fragment_detail__normal"
-        tools:layout="@layout/fragment_detail__normal" />
-    <fragment
-        android:id="@+id/list_NormalFragment"
-        android:name="com.example.cougarsgo.List_NormalFragment"
-        android:label="fragment_list__normal"
-        tools:layout="@layout/fragment_list__normal" />
-    <fragment
-        android:id="@+id/detail_LowVisionFragment"
-        android:name="com.example.cougarsgo.Detail_LowVisionFragment"
-        android:label="fragment_detail__low_vision"
-        tools:layout="@layout/fragment_detail__low_vision" />
-    <action
-        android:id="@+id/action_global_list_NormalFragment"
-        app:destination="@id/list_NormalFragment" />
-    <action
-        android:id="@+id/action_global_detail_NormalFragment"
-        app:destination="@id/detail_NormalFragment" />
-    <action
-        android:id="@+id/action_global_detail_LowVisionFragment"
-        app:destination="@id/detail_LowVisionFragment" />
-    <fragment
-        android:id="@+id/signupFragment"
+        android:id="@+id/signupFragment2"
         android:name="com.example.cougarsgo.SignupFragment"
-        android:label="fragment_signup"
-        tools:layout="@layout/fragment_signup" />
+        android:label="SignupFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.cougarsgo.LoginFragment"
+        android:label="LoginFragment" />
+    <action
+        android:id="@+id/action_global_signupFragment"
+        app:destination="@id/signupFragment2" />
+    <fragment
+        android:id="@+id/listingsFragment"
+        android:name="com.example.cougarsgo.ListingsFragment"
+        android:label="fragment_listings"
+        tools:layout="@layout/fragment_listings" />
 </navigation>
