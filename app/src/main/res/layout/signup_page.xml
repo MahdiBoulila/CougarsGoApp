@@ -4,17 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signup_increase_text_size"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="INCREASE TEXT SIZE" />
+        android:layout_height="50dp"
+        android:text="INCREASE TEXT SIZE"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:layout_marginVertical="8dp"
+        android:fontFamily="@font/tahoma"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signup_decrease_text_size"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="DECREASE TEXT SIZE"/>
+        android:layout_height="50dp"
+        android:text="DECREASE TEXT SIZE"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:fontFamily="@font/tahoma"/>
 
     <TextView
         android:id="@+id/signup_welcome_message"
@@ -26,7 +33,8 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="30dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:fontFamily="@font/tahoma"/>
 
     <TextView
         android:id="@+id/signup_email_textview"
@@ -37,7 +45,9 @@
         android:layout_marginBottom="8dp"
         android:layout_marginHorizontal="25dp"
         android:paddingLeft="17dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/tahoma"/>
     
     <EditText
         android:id="@+id/signup_email_edittext"
@@ -46,7 +56,8 @@
         android:hint="input email here"
         android:layout_marginBottom="25dp"
         android:layout_marginHorizontal="25dp"
-        android:paddingLeft="17dp"/>
+        android:paddingLeft="17dp"
+        android:fontFamily="@font/tahoma"/>
 
     <TextView
         android:id="@+id/signup_password_textview"
@@ -56,7 +67,9 @@
         android:layout_marginBottom="8dp"
         android:layout_marginHorizontal="25dp"
         android:paddingLeft="17dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/tahoma"/>
 
     <EditText
         android:id="@+id/signup_password_edittext"
@@ -65,14 +78,18 @@
         android:hint="input password here"
         android:layout_marginBottom="25dp"
         android:layout_marginHorizontal="25dp"
-        android:paddingLeft="17dp"/>
+        android:paddingLeft="17dp"
+        android:fontFamily="@font/tahoma"/>
     
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signup_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="Sign Up"
         android:layout_marginBottom="25dp"
-        android:layout_marginHorizontal="25dp"/>
+        android:layout_marginHorizontal="25dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:fontFamily="@font/tahoma"/>
 
 </LinearLayout>

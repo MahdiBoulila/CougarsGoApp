@@ -4,17 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/detail_increase_text_size"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="INCREASE TEXT SIZE" />
+        android:layout_height="50dp"
+        android:text="INCREASE TEXT SIZE"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:layout_marginVertical="8dp"
+        android:fontFamily="@font/tahoma"/>
 
     <Button
         android:id="@+id/detail_decrease_text_size"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="DECREASE TEXT SIZE"/>
+        android:layout_height="50dp"
+        android:text="DECREASE TEXT SIZE"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:fontFamily="@font/tahoma"/>
 
     <ScrollView
         android:id="@+id/detail_scrollview"
@@ -40,7 +47,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="iPhone 13 Pro Max"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/tahoma"/>
     </LinearLayout>
 
     <TableLayout
@@ -53,12 +62,14 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Rating"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/tahoma"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="input rating here in numbers"
-                />
+                android:fontFamily="@font/tahoma"/>
         </TableRow>
 
         <TableRow>
@@ -66,13 +77,17 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Seller's Name:"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/tahoma"/>
             <TextView
                 android:id="@+id/detail_seller_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Shuo Niu"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/tahoma"/>
         </TableRow>
 
         <TableRow>
@@ -80,13 +95,17 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Condition"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/tahoma"/>
             <TextView
                 android:id="@+id/detail_product_condition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Refurbished"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/tahoma"/>
         </TableRow>
 
         <TableRow android:layout_height="wrap_content">
@@ -95,14 +114,18 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="Description: "/>
+                android:text="Description: "
+                android:textColor="@color/black"
+                android:fontFamily="@font/tahoma"/>
 
             <TextView
                 android:id="@+id/detail_prduct_description"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="Phone looks clean. Has a phone class included and original charger" />
+                android:text="Phone looks clean. Has a phone class included and original charger"
+                android:textColor="@color/black"
+                android:fontFamily="@font/tahoma"/>
         </TableRow>
     </TableLayout>
 
@@ -115,7 +138,10 @@
             android:layout_width="150dp"
             android:layout_height="75dp"
             android:text="contact"
-            android:layout_marginHorizontal="135dp"/>
+            android:layout_marginHorizontal="135dp"
+            android:background="@color/black"
+            android:textColor="@color/white"
+            android:fontFamily="@font/tahoma"/>
     </LinearLayout>
 
 
