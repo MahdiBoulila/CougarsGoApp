@@ -4,11 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/signup_increase_text_size"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="INCREASE TEXT SIZE" />
+
+    <Button
+        android:id="@+id/signup_decrease_text_size"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="DECREASE TEXT SIZE"/>
+
     <TextView
         android:id="@+id/signup_welcome_message"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
         android:layout_marginHorizontal="25dp"
         android:text="Welcome to CougarsGo!"
         android:textAlignment="center"
@@ -19,7 +31,7 @@
     <TextView
         android:id="@+id/signup_email_textview"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:text="email:"
         android:textSize="15dp"
         android:layout_marginBottom="8dp"
@@ -30,8 +42,8 @@
     <EditText
         android:id="@+id/signup_email_edittext"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="email"
+        android:layout_height="wrap_content"
+        android:hint="input email here"
         android:layout_marginBottom="25dp"
         android:layout_marginHorizontal="25dp"
         android:paddingLeft="17dp"/>
@@ -39,7 +51,7 @@
     <TextView
         android:id="@+id/signup_password_textview"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:text="password:"
         android:layout_marginBottom="8dp"
         android:layout_marginHorizontal="25dp"
@@ -49,27 +61,8 @@
     <EditText
         android:id="@+id/signup_password_edittext"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="password"
-        android:layout_marginBottom="25dp"
-        android:layout_marginHorizontal="25dp"
-        android:paddingLeft="17dp"/>
-
-    <TextView
-        android:id="@+id/signup_confirm_password_textview"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:text="confirm password:"
-        android:layout_marginBottom="8dp"
-        android:layout_marginHorizontal="25dp"
-        android:paddingLeft="17dp"
-        android:textStyle="bold"/>
-
-    <EditText
-        android:id="@+id/signup_confirm_password_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="confirm password"
+        android:layout_height="wrap_content"
+        android:hint="input password here"
         android:layout_marginBottom="25dp"
         android:layout_marginHorizontal="25dp"
         android:paddingLeft="17dp"/>
@@ -77,7 +70,7 @@
     <Button
         android:id="@+id/signup_button"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:text="Sign Up"
         android:layout_marginBottom="25dp"
         android:layout_marginHorizontal="25dp"/>

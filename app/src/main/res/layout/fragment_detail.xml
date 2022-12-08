@@ -4,11 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/detail_increase_text_size"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="INCREASE TEXT SIZE" />
+
+    <Button
+        android:id="@+id/detail_decrease_text_size"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="DECREASE TEXT SIZE"/>
+
     <ScrollView
         android:id="@+id/detail_scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp">
         <ImageView
             android:id="@+id/detail_scrollview_img"
@@ -38,62 +50,64 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
                 android:text="Rating"
                 android:paddingLeft="10dp"/>
-            <RatingBar
-                android:id="@+id/detail_ratingbar"
-                android:numStars="5"
-                android:layout_height="50dp"
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="input rating here in numbers"
                 />
         </TableRow>
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
                 android:text="Seller's Name:"
                 android:paddingLeft="10dp"/>
             <TextView
                 android:id="@+id/detail_seller_name"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Shuo Niu"
                 android:paddingLeft="10dp"/>
         </TableRow>
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
                 android:text="Condition"
                 android:paddingLeft="10dp"/>
             <TextView
                 android:id="@+id/detail_product_condition"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Refurbished"
                 android:paddingLeft="10dp"/>
         </TableRow>
 
-        <TableRow>
+        <TableRow android:layout_height="wrap_content">
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Description: "
-                android:paddingLeft="10dp"/>
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Description: "/>
+
             <TextView
                 android:id="@+id/detail_prduct_description"
                 android:layout_width="300dp"
-                android:layout_height="match_parent"
-                android:text="Phone looks clean. Has a phone class included and original charger"
-                android:paddingLeft="10dp"/>
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Phone looks clean. Has a phone class included and original charger" />
         </TableRow>
     </TableLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <androidx.appcompat.widget.AppCompatButton
@@ -101,7 +115,7 @@
             android:layout_width="150dp"
             android:layout_height="75dp"
             android:text="contact"
-            android:layout_gravity="center"/>
+            android:layout_marginHorizontal="135dp"/>
     </LinearLayout>
 
 
