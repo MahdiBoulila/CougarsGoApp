@@ -82,23 +82,4 @@
         android:layout_marginBottom="25dp"
         android:layout_marginHorizontal="25dp"/>
 
-    <TextView
-        android:id="@+id/signup_checkbox_message"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_marginHorizontal="25dp"
-        android:text="Choose the size that works best: "
-        android:textStyle="bold"
-        android:textAlignment="center"/>
-
-    <CheckBox
-        android:id="@+id/signup_small_checkbox"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"/>
-
-    <CheckBox
-        android:id="@+id/signup_large_checkbox"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"/>
-
 </LinearLayout>

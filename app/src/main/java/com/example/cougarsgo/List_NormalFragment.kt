@@ -34,7 +34,7 @@ class List_NormalFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list__normal, container, false)
+        return inflater.inflate(R.layout.fragment_list__low_vision, container, false)
     }
 
     companion object {

@@ -5,11 +5,13 @@
     android:layout_height="match_parent">
 
     <ScrollView
+        android:id="@+id/detail_scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
         android:layout_marginBottom="50dp">
         <ImageView
+            android:id="@+id/detail_scrollview_img"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.3"
@@ -22,6 +24,7 @@
         android:layout_weight="0.1"
         android:orientation="horizontal">
         <TextView
+            android:id="@+id/detail_product_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="iPhone 13 Pro Max"
@@ -40,6 +43,8 @@
                 android:text="Rating"
                 android:paddingLeft="10dp"/>
             <RatingBar
+                android:id="@+id/detail_ratingbar"
+                android:numStars="5"
                 android:layout_height="50dp"
                 />
         </TableRow>
@@ -51,6 +56,7 @@
                 android:text="Seller's Name:"
                 android:paddingLeft="10dp"/>
             <TextView
+                android:id="@+id/detail_seller_name"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Shuo Niu"
@@ -64,6 +70,7 @@
                 android:text="Condition"
                 android:paddingLeft="10dp"/>
             <TextView
+                android:id="@+id/detail_product_condition"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Refurbished"
@@ -77,6 +84,7 @@
                 android:text="Description: "
                 android:paddingLeft="10dp"/>
             <TextView
+                android:id="@+id/detail_prduct_description"
                 android:layout_width="300dp"
                 android:layout_height="match_parent"
                 android:text="Phone looks clean. Has a phone class included and original charger"
@@ -89,11 +97,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="150dp"
-            android:layout_height="75dp"
-            android:text="$1500"
-            android:layout_gravity="center"/>
-        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/detail_contact_button"
             android:layout_width="150dp"
             android:layout_height="75dp"
             android:text="contact"
