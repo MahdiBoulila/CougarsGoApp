@@ -41,7 +41,7 @@
                 android:paddingLeft="10dp"/>
             <RatingBar
                 android:layout_height="50dp"
-                android:scrollbarStyle=""/>
+                />
         </TableRow>
 
         <TableRow>
