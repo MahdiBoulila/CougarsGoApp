@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--Version 1.0 -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,9 +20,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
-                android:text="MARKETPLACE"
+                android:text="WELCOME"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="55dp"
                 android:textStyle="bold" />
         </TableRow>
@@ -33,4 +36,14 @@
         android:layout_weight="5"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:background="@color/black"
+        app:itemTextColor="#FFFFFF"
+        app:itemIconSize="43dp"
+        app:itemIconTint="#FFFFFF"
+        app:menu="@menu/bottom_menu" />
 </LinearLayout>

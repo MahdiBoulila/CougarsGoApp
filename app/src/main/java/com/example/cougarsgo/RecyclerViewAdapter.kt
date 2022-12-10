@@ -1,10 +1,10 @@
 package com.example.cougarsgo
 
-/*
+
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -17,11 +17,13 @@ class RecyclerViewAdapter(var listingArray: Array<ListingModel>) : RecyclerView.
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
         val viewItem =
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_view_normal, parent, false)
+                .inflate(R.layout.item_view, parent, false)
         return RecyclerViewHolder(viewItem, onClick)
     }
 
     override fun getItemCount(): Int {
+
+        Log.d("size_list", listingArray.size.toString())
         return listingArray.size
     }
 
@@ -32,21 +34,20 @@ class RecyclerViewAdapter(var listingArray: Array<ListingModel>) : RecyclerView.
     class RecyclerViewHolder(val viewItem: View, val onClick: (ListingModel) -> Unit) : RecyclerView.ViewHolder(viewItem) {
         fun bind(Listing: ListingModel) {
 
+            viewItem.findViewById<TextView>(R.id.item_view_name).text = Listing.name
+            viewItem.findViewById<TextView>(R.id.item_view_description).text = Listing.description
+            viewItem.findViewById<TextView>(R.id.item_view_price).text = Listing.price
+            viewItem.findViewById<TextView>(R.id.item_view_color).text = Listing.color
 
-            /*
-            viewItem.findViewById<TextView>(R.id.lv_company).text = Restaurant.name
-            viewItem.findViewById<TextView>(R.id.lv_style).text = Restaurant.style
-            viewItem.findViewById<TextView>(R.id.lv_service).text = Restaurant.service
+
 
             viewItem.setOnClickListener {
-                onClick(Restaurant)
+                onClick(Listing)
             }
 
-             */
 
 
         }
     }
 }
 
- */

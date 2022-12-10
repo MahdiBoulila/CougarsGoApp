@@ -1,11 +1,11 @@
 package com.example.cougarsgo
 
-class ListingModel(
-    var id: Int,
+data class ListingModel(
+    var id: String,
     var name: String,
     var description: String,
-    var sellerID: Int,
-    var price: Int,
+    var sellerID: String,
+    var price: String,
     var color: String
 ) {
 }

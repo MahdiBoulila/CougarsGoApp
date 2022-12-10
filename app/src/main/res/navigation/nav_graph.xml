@@ -20,4 +20,10 @@
         android:name="com.example.cougarsgo.ListingsFragment"
         android:label="fragment_listings"
         tools:layout="@layout/fragment_listings" />
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment" />
+    <action
+        android:id="@+id/action_global_listingsFragment"
+        app:destination="@id/listingsFragment" />
 </navigation>

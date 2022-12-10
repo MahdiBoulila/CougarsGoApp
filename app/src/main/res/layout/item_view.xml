@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="700dp">
+    android:layout_height="wrap_content">
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_marginLeft="7dp"
@@ -21,7 +21,7 @@
                 android:layout_weight="0.5">
                 <TableRow>
                     <ImageView
-                        android:id="@+id/item_view_lowvision_image"
+                        android:id="@+id/item_view_image"
                         android:layout_width="wrap_content"
                         android:layout_weight="1"
                         android:layout_height="400dp"
@@ -39,9 +39,10 @@
                         android:textSize="25dp"
                         android:paddingLeft="10dp"/>
                     <TextView
-                        android:id="@+id/item_view_lowvision_name"
+                        android:id="@+id/item_view_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:text="iPhone 13 Pro Max"
                         android:textSize="30dp"
                         android:layout_gravity="center_horizontal"
@@ -55,7 +56,7 @@
                         android:textSize="25dp"
                         android:paddingLeft="10dp"/>
                     <TextView
-                        android:id="@+id/item_view_lowvision_description"
+                        android:id="@+id/item_view_description"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:text="iPhone 13 Pro"
@@ -70,7 +71,7 @@
                         android:textSize="25dp"
                         android:paddingLeft="10dp"/>
                     <TextView
-                        android:id="@+id/item_view_lowvision_color"
+                        android:id="@+id/item_view_color"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="iPhone 13 Pro Max"
@@ -86,6 +87,7 @@
                         android:paddingLeft="10dp"
                         android:textSize="25dp"/>
                     <TextView
+                        android:id="@+id/item_view_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$1500"
