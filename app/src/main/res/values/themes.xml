@@ -31,4 +31,8 @@
         <item name="android:textSize">40dp</item>
     </style>
 
+    <style name="CustomBoarder" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="background"></item>
+    </style>
+
 </resources>

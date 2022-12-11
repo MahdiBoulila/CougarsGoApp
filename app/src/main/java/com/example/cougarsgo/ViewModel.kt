@@ -11,10 +11,15 @@ import com.google.firebase.ktx.Firebase
 
 class ViewModel: ViewModel(), ValueEventListener {
     val database = MutableLiveData<DatabaseReference>()
-    val currentUser = MutableLiveData<UserModel>()
+
     val listings = MutableLiveData<ArrayList<ListingModel>>()
     val fontsize = MutableLiveData<Number>()
     val users = MutableLiveData<List<UserModel>>()
+
+    // Current Listing
+    val currentListing = MutableLiveData<ListingModel>()
+    val currentUser = MutableLiveData<UserModel>()
+
 
     // List of restaurants from csv file
     val test = MutableLiveData<Array<ListingModel>>()
@@ -24,6 +29,8 @@ class ViewModel: ViewModel(), ValueEventListener {
         users.value = emptyList()
         listings.value = ArrayList<ListingModel>()
         fontsize.value = 24
+
+
         database.value = Firebase.database.getReference("")
         database.value?.addValueEventListener(this)
 
@@ -32,30 +39,14 @@ class ViewModel: ViewModel(), ValueEventListener {
     }
 
     fun getList() : Array<ListingModel> {
-
         // Holds all the entire list
         var listing_list = emptyArray<ListingModel>()
-
         if (test.value != null) {
             listing_list = test.value!!
         }
 
         Log.d("entire_list", listing_list.toString())
         return listing_list
-
-
-    }
-
-
-    fun insertNewListing(){
-
-    }
-
-    fun updateUserListings(){
-
-    }
-
-    fun updateDatabase(){
 
     }
 
@@ -67,6 +58,46 @@ class ViewModel: ViewModel(), ValueEventListener {
         }
     }
 
+    // to fetch detail
+    fun getCurrentListing(listing: ListingModel){
+
+        // Test
+        Log.d("currentlisting", listing.toString())
+
+        currentListing.value = listing
+        currentListing.postValue(listing)
+    }
+
+
+    fun getCurrentUser(user: UserModel){
+
+        // Test
+        Log.d("currentuser", user.toString())
+
+        currentUser.value = user
+        currentUser.postValue(user)
+    }
+
+    fun insertNewListing(listing: ListingModel){
+
+        /*
+        currentListing.value = listing
+        database.value?.child("")?.child(listing.name)?.setValue(currentListing.value!!.name)
+        database.value?.child("")?.child(listing.description)?.setValue(currentListing.value!!.description)
+        database.value?.child("")?.child(listing.color)?.setValue(currentListing.value!!.color)
+        database.value?.child("")?.child(listing.price)?.setValue(currentListing.value!!.price)
+
+
+         */
+    }
+
+    fun updateUserListings(listing: ListingModel){
+
+    }
+
+    fun updateDatabase(){
+
+    }
 
 
     override fun onDataChange(snapshot: DataSnapshot) {
@@ -78,7 +109,7 @@ class ViewModel: ViewModel(), ValueEventListener {
 //            Log.e("MAHDI ", it.value.toString())
             val user = it.getValue(UserModel::class.java)
 
-            // val listing = it.getValue(ListingModel::class.java)
+            val listing = it.getValue(ListingModel::class.java)
 
             if(user != null){
                 users.add(user)
@@ -86,24 +117,24 @@ class ViewModel: ViewModel(), ValueEventListener {
 
             }
 
-            /*
+
             // Add listing to listings arraylist
             if (listing != null) {
                 listings.add(listing)
             }
 
-             */
+
         }
         this.users.value = users
         this.users.postValue(users)
 
 
-        /*
+
         this.listings.value = listings
         // Post message value
         this.listings.postValue(listings)
 
-         */
+
 
     }
 

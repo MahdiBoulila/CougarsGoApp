@@ -35,6 +35,7 @@ class SignupFragment : Fragment() {
             if (email.isNotBlank() && password.isNotBlank()) {
                 val user = UserModel(email = email, password = password)
                 viewModel.createUser(user)
+
             }
         }
     }

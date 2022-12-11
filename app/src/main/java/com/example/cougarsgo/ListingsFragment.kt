@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -33,7 +34,7 @@ class ListingsFragment : Fragment() {
         // viewManger = GridLayoutManager(activity, 2)
         viewManger = LinearLayoutManager(activity)
 
-        // Get restaurant arraylist from viewmodel
+        // Get listing arraylist from viewmodel
         val entire_list = viewModel.getList()
 
         Log.d("entire_list", entire_list.toString())
@@ -50,6 +51,9 @@ class ListingsFragment : Fragment() {
 
         val onClickLambda:(ListingModel) -> Unit = {
 
+            // Current Listing = the listing that was clicked
+            viewModel.getCurrentListing(it)
+            findNavController().navigate(R.id.action_global_detailFragment)
 
         }
         viewAdapter.onClick = onClickLambda

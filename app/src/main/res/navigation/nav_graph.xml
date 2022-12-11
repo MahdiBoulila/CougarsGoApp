@@ -26,4 +26,12 @@
     <action
         android:id="@+id/action_global_listingsFragment"
         app:destination="@id/listingsFragment" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.cougarsgo.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+    <action
+        android:id="@+id/action_global_detailFragment"
+        app:destination="@id/detailFragment" />
 </navigation>
