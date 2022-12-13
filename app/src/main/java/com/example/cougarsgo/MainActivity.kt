@@ -24,26 +24,19 @@ class MainActivity : AppCompatActivity() {
      * read the CSV data
      * */
     fun loadData() {
-        val dataString =
-            resources.openRawResource(R.raw.data).bufferedReader()
-                .use { it.readText() }// read the entire file as a string
-        var lines = dataString.trim().split("\n") // split each line
-        lines = lines.subList(1, lines.size) // get rid of the header line
-        //Add to the stock Array.
-        lines.forEach {line:String->
-            val cells = line.split(",")
-            val res = ListingModel(
-                cells[0],
-                cells[1],
-                cells[2],
-                cells[3],
-                cells[4],
-                cells[5],
-                ""
-            )
-            // Add res to your view model
-            data.add(res)
-                    }
+
+
+        val res = ListingModel(
+            "fewnfj",
+            "cells[1]",
+            "cells[2]",
+            "cells[3]",
+            "cells[4]",
+            "cells[5]",
+            "fnekfje"
+        )
+        // Add res to your view model
+        data.add(res)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
