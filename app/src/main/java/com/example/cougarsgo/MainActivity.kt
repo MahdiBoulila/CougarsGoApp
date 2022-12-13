@@ -39,12 +39,11 @@ class MainActivity : AppCompatActivity() {
                 cells[3],
                 cells[4],
                 cells[5],
+                ""
             )
             // Add res to your view model
             data.add(res)
-
-
-        }
+                    }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

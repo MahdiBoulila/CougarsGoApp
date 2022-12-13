@@ -7,7 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+
+import kotlin.random.Random
 
 class SignupFragment : Fragment() {
     val viewModel: ViewModel by activityViewModels()
@@ -33,10 +38,14 @@ class SignupFragment : Fragment() {
             val email = email_edittext.text.toString()
             val password = password_edittext.text.toString()
             if (email.isNotBlank() && password.isNotBlank()) {
-                val user = UserModel(email = email, password = password)
+                val id = Random.nextInt(10000,99999)
+                val user = UserModel(email = email, password = password, id = id)
                 viewModel.createUser(user)
-
+                viewModel.setCurrentUser(user)
+                Toast.makeText(activity, "User Created. Successfully Logged in!", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_global_listingsFragment)
             }
+
         }
     }
 }

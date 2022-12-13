@@ -6,6 +6,7 @@ data class ListingModel(
     var description: String,
     var sellerID: String,
     var price: String,
-    var color: String
+    var color: String,
+    var imagePath: String
 ) {
 }
