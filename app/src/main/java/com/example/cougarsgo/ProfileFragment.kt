@@ -1,15 +1,17 @@
 package com.example.cougarsgo
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -17,16 +19,37 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    lateinit var user_name : TextView
+    lateinit var user_email : TextView
+    lateinit var user_rating: TextView
+    lateinit var user_img : ImageView
+    lateinit var list_recyclerView: RecyclerView
+    lateinit var viewManger: RecyclerView.LayoutManager
+    lateinit var viewAdapter: RecyclerViewAdapter
+    val viewModel: ViewModel by activityViewModels()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        user_name = view.findViewById(R.id.profile_name)
+        user_email = view.findViewById(R.id.profile_email)
+        user_rating = view.findViewById(R.id.profile_rating)
+        user_img = view.findViewById(R.id.profile_img)
+        list_recyclerView = view.findViewById(R.id.listing_recycler_view)
+        /*
+        viewManger = LinearLayoutManager(activity)
+        viewAdapter = RecyclerViewAdapter(viewModel.getList())
+        // Get list recyclerview
+        list_recyclerView = view.findViewById(R.id.listing_recycler_view)
+        list_recyclerView.layoutManager = viewManger
+        list_recyclerView.adapter = viewAdapter
+         */
+        viewModel.currentUser.observe(viewLifecycleOwner, {
+            user_name.text = it.username
+            user_email.text = it.email
+        })
+
     }
 
     override fun onCreateView(
@@ -37,23 +60,5 @@ class ProfileFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
 }

@@ -29,8 +29,6 @@ class ViewModel: ViewModel(), ValueEventListener {
         users.value = emptyList()
         listings.value = ArrayList()
         fontsize.value = 24f
-
-
         database.value = Firebase.database.getReference("")
         database.value?.addValueEventListener(this)
 

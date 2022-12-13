@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.navigation.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 // @Version 1.0
 class MainActivity : AppCompatActivity() {
@@ -42,15 +43,25 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         loadData()
         Log.d("list", data.toString())
-
         // Add
         viewModel.test.value = data.toTypedArray()
-
-
-
+        findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener {
+            if (it.itemId == R.id.bottom_menu_home){
+                findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_listingsFragment)
+                Toast.makeText(this, "Home Selected", Toast.LENGTH_SHORT).show()
+                return@setOnItemSelectedListener true
+            }
+            else if(it.itemId == R.id.bottom_menu_newlisting){
+                findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_addListingFragment)
+                Toast.makeText(this, "New Listing Selected", Toast.LENGTH_SHORT).show()
+                return@setOnItemSelectedListener true
+            }
+            else{
+                return@setOnItemSelectedListener true
+            }
+        }
     }
 
 
@@ -89,6 +100,11 @@ class MainActivity : AppCompatActivity() {
         else if (item.itemId == R.id.menu_newlisting) {
             findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_addListingFragment)
             Toast.makeText(this, "New Listing Selected", Toast.LENGTH_SHORT).show()
+            return true
+        }
+        else if (item.itemId == R.id.menu_profile) {
+            findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_profileFragment)
+            Toast.makeText(this, "Profile Selected", Toast.LENGTH_SHORT).show()
             return true
         }
         else {

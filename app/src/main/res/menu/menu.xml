@@ -37,7 +37,7 @@
             <item
                 android:id="@+id/menu_profile"
                 android:icon="@drawable/ic_baseline_account_circle_24_signup"
-                android:title="Close Menu"
+                android:title="Profile"
                 app:showAsAction="never"
                 />
             <item
