@@ -35,12 +35,8 @@ class ListingsFragment : Fragment() {
         viewManger = LinearLayoutManager(activity)
 
         // Get listing arraylist from viewmodel
-        val entire_list = viewModel.getList()
-
-        Log.d("entire_list", entire_list.toString())
-        System.out.println(viewModel.getList())
-
-        viewAdapter = RecyclerViewAdapter(entire_list)
+        val entire_list = viewModel.listings.value!!
+        viewAdapter = RecyclerViewAdapter(entire_list.toTypedArray())
 
         // Get list recyclerview
         list_recyclerView = view.findViewById(R.id.listing_recycler_view)
@@ -50,22 +46,17 @@ class ListingsFragment : Fragment() {
 
 
         val onClickLambda:(ListingModel) -> Unit = {
-
             // Current Listing = the listing that was clicked
             viewModel.getCurrentListing(it)
             findNavController().navigate(R.id.action_global_detailFragment)
-
         }
         viewAdapter.onClick = onClickLambda
 
-
-
         // This shows the information
         // This method is triggered by postvalue
-        viewModel.test.observe(viewLifecycleOwner, {
-
-
-            viewAdapter.listingArray = viewModel.getList()
+        viewModel.listings.observe(viewLifecycleOwner, {
+            val listings = viewModel.listings.value!!
+            viewAdapter.listingArray = listings.toTypedArray()
             viewAdapter.notifyDataSetChanged()
         })
 
