@@ -14,7 +14,7 @@
         android:text="Welcome Back to CougarsGo!"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="30dp"
         android:textStyle="bold"
         android:fontFamily="@font/tahoma"/>
 
@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="email:"
-        android:textSize="15dp"
+        android:textSize="25dp"
         android:layout_marginBottom="8dp"
         android:layout_marginHorizontal="25dp"
         android:paddingLeft="17dp"
@@ -39,7 +39,9 @@
         android:layout_marginBottom="25dp"
         android:layout_marginHorizontal="25dp"
         android:paddingLeft="17dp"
-        android:fontFamily="@font/tahoma"/>
+        android:fontFamily="@font/tahoma"
+        android:textSize="25dp"
+        android:contentDescription="input email here"/>
 
     <TextView
         android:id="@+id/login_password_textview"
@@ -51,7 +53,8 @@
         android:paddingLeft="17dp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:fontFamily="@font/tahoma"/>
+        android:fontFamily="@font/tahoma"
+        android:textSize="25dp"/>
 
     <EditText
         android:id="@+id/login_password_edittext"
@@ -61,7 +64,9 @@
         android:layout_marginBottom="25dp"
         android:layout_marginHorizontal="25dp"
         android:paddingLeft="17dp"
-        android:fontFamily="@font/tahoma"/>
+        android:fontFamily="@font/tahoma"
+        android:textSize="25dp"
+        android:contentDescription="input password here"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login_button"
@@ -72,6 +77,7 @@
         android:layout_marginHorizontal="25dp"
         android:background="@color/black"
         android:textColor="@color/white"
-        android:fontFamily="@font/tahoma"/>
+        android:fontFamily="@font/tahoma"
+        android:textSize="25dp"/>
 
 </LinearLayout>

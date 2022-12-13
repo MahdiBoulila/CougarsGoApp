@@ -8,45 +8,70 @@
         android:id="@+id/profile_img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background"/>
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/tahoma"
         android:text="Name: "
-        android:fontFamily="@font/tahoma"/>
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/profile_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Josh"
-        android:fontFamily="@font/tahoma"/>
+        android:fontFamily="@font/tahoma"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Email"
-        android:fontFamily="@font/tahoma"/>
+        android:fontFamily="@font/tahoma"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/profile_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="josh@email.com"
-        android:fontFamily="@font/tahoma"/>
+        android:fontFamily="@font/tahoma"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Rating"
-        android:fontFamily="@font/tahoma"/>
+        android:fontFamily="@font/tahoma"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/profile_rating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="9.5"
-        android:fontFamily="@font/tahoma"/>
+        android:fontFamily="@font/tahoma"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="25dp"/>
 
 </LinearLayout>
