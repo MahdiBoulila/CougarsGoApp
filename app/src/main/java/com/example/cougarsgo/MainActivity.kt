@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 
     // Load restaurant data into this arraylist
     var data = ArrayList<ListingModel>()
+
+
     /**
      * read the CSV data
      * */
@@ -54,6 +56,8 @@ class MainActivity : AppCompatActivity() {
 
         // Add
         viewModel.test.value = data.toTypedArray()
+
+
 
     }
 

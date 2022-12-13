@@ -30,7 +30,7 @@
                         android:paddingTop="25dp"
                         android:scaleType="fitXY"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/ic_launcher_background"/>
+                        android:src="@drawable/c07955070" />
                 </TableRow>
                 <TableRow>
                     <TextView

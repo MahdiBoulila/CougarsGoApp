@@ -27,8 +27,8 @@ class ViewModel: ViewModel(), ValueEventListener {
     init{
         currentUser.value = UserModel()
         users.value = emptyList()
-        listings.value = ArrayList<ListingModel>()
-        fontsize.value = 24
+        listings.value = ArrayList()
+        fontsize.value = 24f
 
 
         database.value = Firebase.database.getReference("")
@@ -80,6 +80,9 @@ class ViewModel: ViewModel(), ValueEventListener {
 
     fun insertNewListing(listing: ListingModel){
 
+        if(currentUser.value != null) {
+
+        }
         /*
         currentListing.value = listing
         database.value?.child("")?.child(listing.name)?.setValue(currentListing.value!!.name)
@@ -109,7 +112,7 @@ class ViewModel: ViewModel(), ValueEventListener {
 //            Log.e("MAHDI ", it.value.toString())
             val user = it.getValue(UserModel::class.java)
 
-            val listing = it.getValue(ListingModel::class.java)
+            // val listing = it.getValue(ListingModel::class.java)
 
             if(user != null){
                 users.add(user)
@@ -117,11 +120,14 @@ class ViewModel: ViewModel(), ValueEventListener {
 
             }
 
+            /*
 
             // Add listing to listings arraylist
             if (listing != null) {
                 listings.add(listing)
             }
+
+             */
 
 
         }
@@ -129,11 +135,14 @@ class ViewModel: ViewModel(), ValueEventListener {
         this.users.postValue(users)
 
 
+        /*
 
         this.listings.value = listings
         // Post message value
         this.listings.postValue(listings)
 
+
+         */
 
 
     }
