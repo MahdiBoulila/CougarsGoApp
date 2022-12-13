@@ -9,7 +9,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 
 import kotlin.random.Random
@@ -30,9 +29,9 @@ class SignupFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        signup_button = view.findViewById(R.id.signup_button)
-        email_edittext = view.findViewById(R.id.signup_email_edittext)
-        password_edittext = view.findViewById(R.id.signup_password_edittext)
+        signup_button = view.findViewById(R.id.create_button)
+        email_edittext = view.findViewById(R.id.listing_email_edittext)
+        password_edittext = view.findViewById(R.id.listing_description_edittext)
 
         signup_button.setOnClickListener{
             val email = email_edittext.text.toString()

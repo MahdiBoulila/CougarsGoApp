@@ -32,7 +32,7 @@
         android:fontFamily="@font/tahoma"/>
     
     <EditText
-        android:id="@+id/signup_email_edittext"
+        android:id="@+id/listing_email_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="input email here"
@@ -57,7 +57,7 @@
         android:textSize="25dp"/>
 
     <EditText
-        android:id="@+id/signup_password_edittext"
+        android:id="@+id/listing_description_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="input password here"
@@ -69,7 +69,7 @@
         android:contentDescription="input password here"/>
     
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/signup_button"
+        android:id="@+id/create_button"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Sign Up"

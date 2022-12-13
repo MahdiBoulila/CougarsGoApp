@@ -12,49 +12,28 @@ import com.google.firebase.ktx.Firebase
 
 class ViewModel: ViewModel(), ValueEventListener {
     val database = MutableLiveData<DatabaseReference>()
-
     val listings = MutableLiveData<ArrayList<ListingModel>>()
     val fontsize = MutableLiveData<Number>()
-    val users = MutableLiveData<List<UserModel>>()
+    val users = MutableLiveData<ArrayList<UserModel>>()
 
     // Current Listing
     val currentListing = MutableLiveData<ListingModel>()
     val currentUser = MutableLiveData<UserModel>()
 
-    // List of restaurants from csv file
-    val test = MutableLiveData<Array<ListingModel>>()
-
     init{
         currentUser.value = UserModel()
-        users.value = emptyList()
+        users.value = ArrayList<UserModel>()
         listings.value = ArrayList()
         fontsize.value = 24f
-
-
         database.value = Firebase.database.getReference("")
         database.value?.addValueEventListener(this)
-
-        test.value = emptyArray()
-
-    }
-
-    fun getList() : Array<ListingModel> {
-        // Holds all the entire list
-        var listing_list = emptyArray<ListingModel>()
-        if (test.value != null) {
-            listing_list = test.value!!
-        }
-
-        Log.d("entire_list", listing_list.toString())
-        return listing_list
-
     }
 
     fun createUser(user: UserModel) {
         if (user != null) {
             currentUser.value=user
             currentUser.postValue(currentUser.value)
-            database.value?.child(user.email)?.setValue(user)
+            database.value?.child("users")?.child(user.email)?.setValue(user)
         }
     }
 
@@ -74,17 +53,15 @@ class ViewModel: ViewModel(), ValueEventListener {
 
     fun insertNewListing(listing: ListingModel){
         if(currentUser.value != null) {
-
+            database.value?.child("listings")?.child(listing.id.toString())?.setValue(listing)
         }
-        /*
-        currentListing.value = listing
-        database.value?.child("")?.child(listing.name)?.setValue(currentListing.value!!.name)
-        database.value?.child("")?.child(listing.description)?.setValue(currentListing.value!!.description)
-        database.value?.child("")?.child(listing.color)?.setValue(currentListing.value!!.color)
-        database.value?.child("")?.child(listing.price)?.setValue(currentListing.value!!.price)
-         */
-    }
 
+    }
+    fun addListingToCurrentUser(id : Int){
+        if (id != null){
+            currentUser.value?.listingsID?.add(id)
+        }
+    }
     fun updateUserListings(listing: ListingModel){
 
     }
@@ -109,38 +86,23 @@ class ViewModel: ViewModel(), ValueEventListener {
         val users = ArrayList<UserModel>()
         val listings = ArrayList<ListingModel>()
 
-        snapshot.children.forEach{
-//            Log.e("MAHDI ", it.value.toString())
+        snapshot.child("users").children.forEach{
             val user = it.getValue(UserModel::class.java)
-            // val listing = it.getValue(ListingModel::class.java)
             if(user != null){
                 users.add(user)
             }
-
-            /*
-
-            // Add listing to listings arraylist
-            if (listing != null) {
-                listings.add(listing)
-            }
-
-             */
-
-
         }
         this.users.value = users
         this.users.postValue(users)
 
-
-        /*
-
+        snapshot.child("listings").children.forEach{
+            val listing = it.getValue(ListingModel::class.java)
+            if(listing != null){
+                listings.add(listing)
+            }
+        }
         this.listings.value = listings
-        // Post message value
         this.listings.postValue(listings)
-
-
-         */
-
 
     }
 

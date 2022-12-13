@@ -16,42 +16,10 @@ class MainActivity : AppCompatActivity() {
     // ViewModel
     val viewModel : ViewModel by viewModels<ViewModel>()
 
-    // Load restaurant data into this arraylist
-    var data = ArrayList<ListingModel>()
-
-
-    /**
-     * read the CSV data
-     * */
-    fun loadData() {
-
-
-        val res = ListingModel(
-            "fewnfj",
-            "cells[1]",
-            "cells[2]",
-            "cells[3]",
-            "cells[4]",
-            "cells[5]",
-            "fnekfje"
-        )
-        // Add res to your view model
-        data.add(res)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        loadData()
-        Log.d("list", data.toString())
-
-        // Add
-        viewModel.test.value = data.toTypedArray()
-
-
-
-    }
+            }
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -36,7 +36,7 @@ class RecyclerViewAdapter(var listingArray: Array<ListingModel>) : RecyclerView.
 
             viewItem.findViewById<TextView>(R.id.item_view_name).text = Listing.name
             viewItem.findViewById<TextView>(R.id.item_view_description).text = Listing.description
-            viewItem.findViewById<TextView>(R.id.item_view_price).text = Listing.price
+            viewItem.findViewById<TextView>(R.id.item_view_price).text = Listing.price.toString()
             viewItem.findViewById<TextView>(R.id.item_view_color).text = Listing.color
 
 

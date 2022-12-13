@@ -12,11 +12,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import kotlin.random.Random
 
-/**
- * A simple [Fragment] subclass.
- * Use the [LoginFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class LoginFragment : Fragment() {
     lateinit var email_edittext: EditText
     lateinit var password_edittext: EditText
@@ -42,9 +37,11 @@ class LoginFragment : Fragment() {
             val password = password_edittext.text.toString()
             if (email.isNotBlank() && password.isNotBlank()) {
                 if (viewModel.isUserInDatabase(email)) {
+                    //TODO check if email ends with "@clarku.edu"
                     val userFromDatabase = viewModel.getUserFromDatabase(email, password)
                     if (userFromDatabase != null) {
                         viewModel.setCurrentUser(userFromDatabase)
+                        //TODO fix toast
                         Toast.makeText(
                             activity,
                             "Welcome: " + userFromDatabase?.id,
