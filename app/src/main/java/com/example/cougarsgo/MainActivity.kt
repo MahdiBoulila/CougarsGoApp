@@ -89,6 +89,12 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         else if (item.itemId == R.id.menu_newlisting) {
+            findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_addListingFragment)
+            Toast.makeText(this, "New Listing Selected", Toast.LENGTH_SHORT).show()
+            return true
+        }
+        else if (item.itemId == R.id.menu_newlisting) {
+            findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_addListingFragment)
             Toast.makeText(this, "New Listing Selected", Toast.LENGTH_SHORT).show()
             return true
         }

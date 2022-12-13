@@ -23,7 +23,7 @@
                 <TableRow>
                     <ImageView
                         android:id="@+id/item_view_image"
-                        android:layout_width="wrap_content"
+                        android:layout_width="10dp"
                         android:layout_weight="1"
                         android:layout_height="400dp"
                         android:layout_gravity="center_horizontal"
@@ -31,6 +31,7 @@
                         android:scaleType="fitXY"
                         android:adjustViewBounds="true"
                         android:src="@drawable/c07955070" />
+
                 </TableRow>
                 <TableRow>
                     <TextView
@@ -43,9 +44,8 @@
                         android:textAllCaps="true"/>
                     <TextView
                         android:id="@+id/item_view_name"
-                        android:layout_width="7dp"
-                        android:maxWidth="230dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
                         android:textColor="@color/black"
                         android:text="iPhone 13 Pro Max"
                         android:textSize="30dp"

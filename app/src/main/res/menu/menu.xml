@@ -35,15 +35,15 @@
                 app:showAsAction="never"
                 />
             <item
-                android:id="@+id/menu_closemenu"
-                android:icon="@drawable/ic_baseline_close_24"
+                android:id="@+id/menu_profile"
+                android:icon="@drawable/ic_baseline_account_circle_24_signup"
                 android:title="Close Menu"
                 app:showAsAction="never"
                 />
             <item
-                android:id="@+id/menu_exit"
-                android:icon="@drawable/ic_baseline_exit_to_app_24"
-                android:title="Exit"
+                android:id="@+id/menu_closemenu"
+                android:icon="@drawable/ic_baseline_close_24"
+                android:title="Close Menu"
                 app:showAsAction="never"
                 />
         </menu>

@@ -42,7 +42,7 @@ class DetailFragment : Fragment() {
         viewModel.currentListing.observe(viewLifecycleOwner, {
             detail_name.text = it.name
             detail_description.text = it.description
-            detail_price.text = it.price
+            detail_price.text = it.price.toString()
             detail_color.text = it.color
         })
 
