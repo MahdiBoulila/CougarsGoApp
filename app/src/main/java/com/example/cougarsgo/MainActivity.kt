@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                 return@setOnItemSelectedListener true
             }
             else if(it.itemId == R.id.bottom_menu_newlisting) {
-                if (viewModel.currentUser.value!! == null) {
+                if (viewModel.currentUser.value?.username?.isBlank() == true) {
                     findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_loginFragment)
                     Toast.makeText(this, "Please Login first", Toast.LENGTH_SHORT).show()
                     return@setOnItemSelectedListener true
@@ -74,25 +74,28 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         else if (item.itemId == R.id.menu_newlisting) {
-            findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_addListingFragment)
-            Toast.makeText(this, "New Listing Selected", Toast.LENGTH_SHORT).show()
-            return true
-        }
-        else if (item.itemId == R.id.menu_newlisting) {
-            return if (viewModel.currentUser.value!! == null) {
+            if (viewModel.currentUser.value?.username?.isBlank() == true) {
                 findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_loginFragment)
                 Toast.makeText(this, "Please Login first", Toast.LENGTH_SHORT).show()
-                true
-            } else {
+                return true
+            }
+            else {
                 findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_addListingFragment)
                 Toast.makeText(this, "New Listing Selected", Toast.LENGTH_SHORT).show()
-                true
+                return true
             }
         }
         else if (item.itemId == R.id.menu_profile) {
-            findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_profileFragment)
-            Toast.makeText(this, "Profile Selected", Toast.LENGTH_SHORT).show()
-            return true
+            if (viewModel.currentUser.value?.username?.isBlank() == true) {
+                findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_loginFragment)
+                Toast.makeText(this, "Please Login first", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            else {
+                findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_profileFragment)
+                Toast.makeText(this, "Profile Selected", Toast.LENGTH_SHORT).show()
+                return true
+            }
         }
         else {
             return super.onOptionsItemSelected(item)
