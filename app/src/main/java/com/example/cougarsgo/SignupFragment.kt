@@ -1,19 +1,16 @@
 package com.example.cougarsgo
 
 import android.os.Bundle
-import android.util.Patterns
 import android.util.Patterns.EMAIL_ADDRESS
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import java.util.regex.Pattern
-
 import kotlin.random.Random
 
 class SignupFragment : Fragment() {
@@ -41,6 +38,11 @@ class SignupFragment : Fragment() {
             val password = password_edittext.text.toString()
             if(email.isEmpty()){
                 email_edittext.setError("Email is required")
+                email_edittext.requestFocus()
+                return@setOnClickListener
+            }
+            else if(!email.contains("@clarku.edu")){
+                email_edittext.setError("Please provide a valid clark email")
                 email_edittext.requestFocus()
                 return@setOnClickListener
             }
