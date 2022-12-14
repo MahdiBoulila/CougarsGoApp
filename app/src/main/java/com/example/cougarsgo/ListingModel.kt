@@ -7,6 +7,6 @@ class ListingModel(
     var sellerID: String = "",
     var price: Int = 0 ,
     var color: String = "white",
-    var imagePath: String = ""
+    var category: String = ""
 ) {
 }

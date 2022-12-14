@@ -33,7 +33,7 @@ class LoginFragment : Fragment() {
         password_edittext = view.findViewById(R.id.login_password_edittext)
 
         login_button.setOnClickListener {
-            val email = email_edittext.text.toString()
+            var email = email_edittext.text.toString()
             val password = password_edittext.text.toString()
             if (email.isEmpty()) {
                 email_edittext.setError("Email is required")
@@ -46,8 +46,8 @@ class LoginFragment : Fragment() {
                 return@setOnClickListener
             }
             else {
+                email = email.dropLast(4)
                 if (viewModel.isUserInDatabase(email)) {
-                    //TODO check if email ends with "@clarku.edu"
                     val userFromDatabase = viewModel.getUserFromDatabase(email, password)
                     if (userFromDatabase != null) {
                         viewModel.setCurrentUser(userFromDatabase)
@@ -61,7 +61,7 @@ class LoginFragment : Fragment() {
                 } else {
                     Toast.makeText(
                         this.requireActivity(),
-                        "User cannot be found.",
+                        "Incorrect email or password.",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
