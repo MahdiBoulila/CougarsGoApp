@@ -35,7 +35,17 @@ class LoginFragment : Fragment() {
         login_button.setOnClickListener {
             val email = email_edittext.text.toString()
             val password = password_edittext.text.toString()
-            if (email.isNotBlank() && password.isNotBlank()) {
+            if (email.isEmpty()) {
+                email_edittext.setError("Email is required")
+                email_edittext.requestFocus()
+                return@setOnClickListener
+            }
+            if (password.isEmpty()) {
+                password_edittext.setError("Password is required")
+                password_edittext.requestFocus()
+                return@setOnClickListener
+            }
+            else {
                 if (viewModel.isUserInDatabase(email)) {
                     //TODO check if email ends with "@clarku.edu"
                     val userFromDatabase = viewModel.getUserFromDatabase(email, password)
@@ -43,7 +53,7 @@ class LoginFragment : Fragment() {
                         viewModel.setCurrentUser(userFromDatabase)
                         //TODO fix toast
                         Toast.makeText(
-                            activity,
+                            this.requireActivity(),
                             "Welcome: " + userFromDatabase?.id,
                             Toast.LENGTH_SHORT
                         )
@@ -51,20 +61,13 @@ class LoginFragment : Fragment() {
                     }
                 } else {
                     Toast.makeText(
-                        activity,
+                        this.requireActivity(),
                         "User cannot be found.",
                         Toast.LENGTH_SHORT
                     )
                 }
-            } else {
-                Toast.makeText(
-                    activity,
-                    "Make sure to fill out your account information.",
-                    Toast.LENGTH_SHORT
-                )
             }
         }
-
     }
 }
 
