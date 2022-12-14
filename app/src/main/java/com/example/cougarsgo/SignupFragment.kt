@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import java.util.*
 import kotlin.random.Random
 
 class SignupFragment : Fragment() {
@@ -59,7 +60,8 @@ class SignupFragment : Fragment() {
                 return@setOnClickListener
             }
             else  {
-                val id = Random.nextInt(10000,99999)
+//                val id = Random.nextInt(10000,99999)
+                val id = UUID.randomUUID().toString()
                 val user = UserModel(email = email, password = password, id = id)
                 viewModel.createUser(user)
                 viewModel.setCurrentUser(user)

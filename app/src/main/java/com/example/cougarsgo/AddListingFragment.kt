@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import java.util.*
 import kotlin.random.Random
 
 
@@ -41,7 +42,8 @@ class AddListingFragment : Fragment() {
             val description = description_edit.text.toString()
             val price = price_edit.text.toString()
             if ((name.isNotBlank() && description.isNotBlank() && price.isNotBlank())){
-                val id = Random.nextInt(1000,9999)
+//                val id = Random.nextInt(1000,9999)
+                val id = UUID.randomUUID().toString()
                 //TODO Waiting for front end to add color
                 val listing = ListingModel(id, name, description, currentUser.id, price.toInt(), "white", "")
                 viewModel.insertNewListing(listing)

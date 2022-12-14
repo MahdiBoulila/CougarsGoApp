@@ -57,7 +57,7 @@ class ViewModel: ViewModel(), ValueEventListener {
         }
 
     }
-    fun addListingToCurrentUser(id : Int){
+    fun addListingToCurrentUser(id : String){
         if (id != null){
             currentUser.value?.listingsID?.add(id)
         }
