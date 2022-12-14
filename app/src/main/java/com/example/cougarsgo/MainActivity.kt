@@ -27,10 +27,17 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Home Selected", Toast.LENGTH_SHORT).show()
                 return@setOnItemSelectedListener true
             }
-            else if(it.itemId == R.id.bottom_menu_newlisting){
-                findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_addListingFragment)
-                Toast.makeText(this, "New Listing Selected", Toast.LENGTH_SHORT).show()
-                return@setOnItemSelectedListener true
+            else if(it.itemId == R.id.bottom_menu_newlisting) {
+                if (viewModel.currentUser.value!! == null) {
+                    findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_loginFragment)
+                    Toast.makeText(this, "Please Login first", Toast.LENGTH_SHORT).show()
+                    return@setOnItemSelectedListener true
+                }
+                else {
+                    findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_addListingFragment)
+                    Toast.makeText(this, "New Listing Selected", Toast.LENGTH_SHORT).show()
+                    return@setOnItemSelectedListener true
+                }
             }
             else{
                 return@setOnItemSelectedListener true
@@ -72,9 +79,15 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         else if (item.itemId == R.id.menu_newlisting) {
-            findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_addListingFragment)
-            Toast.makeText(this, "New Listing Selected", Toast.LENGTH_SHORT).show()
-            return true
+            return if (viewModel.currentUser.value!! == null) {
+                findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_loginFragment)
+                Toast.makeText(this, "Please Login first", Toast.LENGTH_SHORT).show()
+                true
+            } else {
+                findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_addListingFragment)
+                Toast.makeText(this, "New Listing Selected", Toast.LENGTH_SHORT).show()
+                true
+            }
         }
         else if (item.itemId == R.id.menu_profile) {
             findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_profileFragment)

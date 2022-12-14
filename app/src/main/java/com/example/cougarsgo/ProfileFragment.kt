@@ -47,7 +47,7 @@ class ProfileFragment : Fragment() {
          */
         viewModel.currentUser.observe(viewLifecycleOwner, {
             user_name.text = it.username
-            user_email.text = it.email
+            user_email.text = it.email + ".edu"
         })
 
     }

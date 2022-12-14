@@ -42,13 +42,11 @@ class SignupFragment : Fragment() {
                 email_edittext.requestFocus()
                 return@setOnClickListener
             }
-            /*
             else if(!email.contains("@clarku.edu")){
                 email_edittext.setError("Please provide a valid clark email")
                 email_edittext.requestFocus()
                 return@setOnClickListener
             }
-             */
             else if(password.isEmpty()){
                 password_edittext.setError("Password is required")
                 password_edittext.requestFocus()
@@ -62,7 +60,7 @@ class SignupFragment : Fragment() {
             else  {
 //                val id = Random.nextInt(10000,99999)
                 val id = UUID.randomUUID().toString()
-                val user = UserModel(email = email, password = password, id = id)
+                val user = UserModel(email = email.dropLast(4), password = password, id = id)
                 viewModel.createUser(user)
                 viewModel.setCurrentUser(user)
                 Toast.makeText(this.requireActivity(), "User Created. Successfully Logged in!", Toast.LENGTH_SHORT).show()

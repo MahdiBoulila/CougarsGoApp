@@ -23,7 +23,7 @@
                 <TableRow>
                     <ImageView
                         android:id="@+id/item_view_image"
-                        android:layout_width="10dp"
+                        android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="400dp"
                         android:layout_gravity="center_horizontal"
