@@ -51,12 +51,11 @@ class LoginFragment : Fragment() {
                     val userFromDatabase = viewModel.getUserFromDatabase(email, password)
                     if (userFromDatabase != null) {
                         viewModel.setCurrentUser(userFromDatabase)
-                        //TODO fix toast
                         Toast.makeText(
                             this.requireActivity(),
                             "Welcome: " + userFromDatabase?.id,
                             Toast.LENGTH_SHORT
-                        )
+                        ).show()
                         findNavController().navigate(R.id.action_global_listingsFragment)
                     }
                 } else {
@@ -64,7 +63,7 @@ class LoginFragment : Fragment() {
                         this.requireActivity(),
                         "User cannot be found.",
                         Toast.LENGTH_SHORT
-                    )
+                    ).show()
                 }
             }
         }

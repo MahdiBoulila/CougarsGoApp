@@ -41,11 +41,13 @@ class SignupFragment : Fragment() {
                 email_edittext.requestFocus()
                 return@setOnClickListener
             }
+            /*
             else if(!email.contains("@clarku.edu")){
                 email_edittext.setError("Please provide a valid clark email")
                 email_edittext.requestFocus()
                 return@setOnClickListener
             }
+             */
             else if(password.isEmpty()){
                 password_edittext.setError("Password is required")
                 password_edittext.requestFocus()
