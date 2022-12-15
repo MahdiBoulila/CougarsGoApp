@@ -19,7 +19,7 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         detail_name = view.findViewById(R.id.detail_product_name)
-        detail_description = view.findViewById(R.id.detail_prduct_description)
+        detail_description = view.findViewById(R.id.detail_product_description)
         detail_price = view.findViewById(R.id.detail_product_condition)
         detail_color = view.findViewById(R.id.detail_seller_name)
 

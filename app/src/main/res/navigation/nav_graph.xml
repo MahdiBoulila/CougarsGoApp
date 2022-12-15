@@ -38,16 +38,21 @@
         android:id="@+id/addListingFragment"
         android:name="com.example.cougarsgo.AddListingFragment"
         android:label="fragment_add_listing"
-        tools:layout="@layout/fragment_add_listing2" />
+        tools:layout="@layout/fragment_add_listing" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.cougarsgo.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile2" />
+        tools:layout="@layout/fragment_profile" />
     <action
         android:id="@+id/action_global_profileFragment"
         app:destination="@id/profileFragment" />
     <action
         android:id="@+id/action_global_addListingFragment"
         app:destination="@id/addListingFragment" />
+    <fragment
+        android:id="@+id/fragment_edit_listing"
+        android:name="com.example.cougarsgo.fragment_edit_listing"
+        android:label="fragment_edit_listing"
+        tools:layout="@layout/fragment_edit_listing" />
 </navigation>

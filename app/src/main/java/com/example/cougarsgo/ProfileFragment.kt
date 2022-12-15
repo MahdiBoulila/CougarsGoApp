@@ -37,7 +37,7 @@ class ProfileFragment : Fragment() {
         user_email = view.findViewById(R.id.profile_email)
         user_rating = view.findViewById(R.id.profile_rating)
         user_img = view.findViewById(R.id.profile_img)
-        list_recyclerView = view.findViewById(R.id.listing_recycler_view)
+        list_recyclerView = view.findViewById(R.id.profile_listing_recycler_view)
 
         viewManger = LinearLayoutManager(activity)
         viewAdapter = RecyclerViewAdapter(viewModel.listings.value!!.toTypedArray())

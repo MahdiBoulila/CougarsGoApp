@@ -11,7 +11,6 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import java.util.*
-import kotlin.random.Random
 
 
 class AddListingFragment : Fragment() {
@@ -31,10 +30,10 @@ class AddListingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        name_edit = view.findViewById(R.id.listing_email_edittext)
+        name_edit = view.findViewById(R.id.listing_name_edittext)
         description_edit = view.findViewById(R.id.listing_description_edittext)
         price_edit = view.findViewById(R.id.listing_price_edittext)
-        create_button = view.findViewById(R.id.create_button)
+        create_button = view.findViewById(R.id.create_listing_button)
         val currentUser = viewModel.currentUser.value!!
 
         create_button.setOnClickListener{

@@ -2,4 +2,24 @@
     <string name="app_name">CougarsGo</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="color_arrays">
+        <item>White</item>
+        <item>Black</item>
+        <item>Red</item>
+        <item>Green</item>
+        <item>Yellow</item>
+        <item>Blue</item>
+    </string-array>
+
+    <string-array name="product_arrays">
+        <item>Electronics</item>
+        <item>Food</item>
+        <item>Clothing</item>
+        <item>Cleaning Supplies</item>
+        <item>Furniture</item>
+        <item>Academic</item>
+        <item>Arts and Crafts</item>
+        <item>Miscellaneous</item>
+    </string-array>
 </resources>

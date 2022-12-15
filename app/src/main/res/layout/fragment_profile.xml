@@ -1,103 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <ImageView
-        android:id="@+id/profile_img"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="15dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/tahoma"
-        android:text="Name: "
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/profile_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Josh"
-        android:fontFamily="@font/tahoma"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:textSize="25dp"
-        android:layout_marginBottom="15dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Email"
-        android:fontFamily="@font/tahoma"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/profile_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="josh@email.com"
-        android:fontFamily="@font/tahoma"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:textSize="25dp"
-        android:layout_marginBottom="15dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rating"
-        android:fontFamily="@font/tahoma"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/profile_rating"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="9.5"
-        android:fontFamily="@font/tahoma"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:textSize="25dp"
-        android:layout_marginBottom="15dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="My Listings"
-        android:fontFamily="@font/tahoma"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp"/>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listing_recycler_view"
+        <ImageView
+            android:id="@+id/profile_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="9"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:layout_marginHorizontal="50dp"/>
-    </ScrollView>
+            android:src="@drawable/ic_launcher_background"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/tahoma"
+            android:text="Name: "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Josh"
+            android:fontFamily="@font/tahoma"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:layout_marginBottom="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:fontFamily="@font/tahoma"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/profile_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="josh@email.com"
+            android:fontFamily="@font/tahoma"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:layout_marginBottom="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rating"
+            android:fontFamily="@font/tahoma"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/profile_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="9.5"
+            android:fontFamily="@font/tahoma"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:layout_marginBottom="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Listings"
+            android:fontFamily="@font/tahoma"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profile_listing_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginHorizontal="50dp"/>
+        </ScrollView>
 
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

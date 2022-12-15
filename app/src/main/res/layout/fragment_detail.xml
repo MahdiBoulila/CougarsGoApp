@@ -1,146 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-
-    <ScrollView
-        android:id="@+id/detail_scrollview"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp">
-        <ImageView
-            android:id="@+id/detail_scrollview_img"
+        android:layout_height="match_parent">
+
+
+
+        <ScrollView
+            android:id="@+id/detail_scrollview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"/>
-    </ScrollView>
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="50dp">
+            <ImageView
+                android:id="@+id/detail_scrollview_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launcher_background"/>
+        </ScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/detail_product_name"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/detail_product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="iPhone 13 Pro Max"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/tahoma"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="134dp"
+                    android:layout_height="wrap_content"
+                    android:text="Rating"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"
+                    android:textStyle="bold"/>
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/detail_ratingbar"
+                    android:layout_width="275dp"
+                    android:numStars="5"/>
+    <!--            <EditText-->
+    <!--                android:layout_width="275dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:hint="input rating here"-->
+    <!--                android:fontFamily="@font/tahoma"-->
+    <!--                android:textSize="25dp"-->
+    <!--                android:contentDescription="input rating here"/>-->
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="134dp"
+                    android:layout_height="wrap_content"
+                    android:text="Seller's Name"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/detail_seller_name"
+                    android:layout_width="275dp"
+                    android:layout_height="wrap_content"
+                    android:text="Shuo Niu"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="134dp"
+                    android:layout_height="wrap_content"
+                    android:text="Condition"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/detail_product_condition"
+                    android:layout_width="275dp"
+                    android:layout_height="wrap_content"
+                    android:text="Refurbished"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"/>
+            </TableRow>
+
+            <TableRow android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="134dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="Description"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/detail_product_description"
+                    android:layout_width="275dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="Phone looks clean. Has a phone class included and original charger"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"/>
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="iPhone 13 Pro Max"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:fontFamily="@font/tahoma"
-            android:textSize="30dp"
-            android:textStyle="bold"/>
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/detail_contact_button"
+                android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:text="contact"
+                android:layout_marginHorizontal="135dp"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:fontFamily="@font/tahoma"
+                android:textSize="25dp"/>
+        </LinearLayout>
+
+
     </LinearLayout>
-
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5">
-
-        <TableRow>
-            <TextView
-                android:layout_width="134dp"
-                android:layout_height="wrap_content"
-                android:text="Rating"
-                android:paddingLeft="10dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/tahoma"
-                android:textSize="25dp"
-                android:textStyle="bold"/>
-            <EditText
-                android:layout_width="275dp"
-                android:layout_height="wrap_content"
-                android:hint="input rating here"
-                android:fontFamily="@font/tahoma"
-                android:textSize="25dp"
-                android:contentDescription="input rating here"/>
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:layout_width="134dp"
-                android:layout_height="wrap_content"
-                android:text="Seller's Name"
-                android:paddingLeft="10dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/tahoma"
-                android:textSize="25dp"
-                android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/detail_seller_name"
-                android:layout_width="275dp"
-                android:layout_height="wrap_content"
-                android:text="Shuo Niu"
-                android:paddingLeft="10dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/tahoma"
-                android:textSize="25dp"/>
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:layout_width="134dp"
-                android:layout_height="wrap_content"
-                android:text="Condition"
-                android:paddingLeft="10dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/tahoma"
-                android:textSize="25dp"
-                android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/detail_product_condition"
-                android:layout_width="275dp"
-                android:layout_height="wrap_content"
-                android:text="Refurbished"
-                android:paddingLeft="10dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/tahoma"
-                android:textSize="25dp"/>
-        </TableRow>
-
-        <TableRow android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="134dp"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:text="Description"
-                android:textColor="@color/black"
-                android:fontFamily="@font/tahoma"
-                android:textSize="25dp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/detail_prduct_description"
-                android:layout_width="275dp"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:text="Phone looks clean. Has a phone class included and original charger"
-                android:textColor="@color/black"
-                android:fontFamily="@font/tahoma"
-                android:textSize="25dp"/>
-        </TableRow>
-    </TableLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/detail_contact_button"
-            android:layout_width="150dp"
-            android:layout_height="75dp"
-            android:text="contact"
-            android:layout_marginHorizontal="135dp"
-            android:background="@color/black"
-            android:textColor="@color/white"
-            android:fontFamily="@font/tahoma"
-            android:textSize="25dp"/>
-    </LinearLayout>
-
-
-</LinearLayout>
+</ScrollView>
