@@ -58,13 +58,6 @@
                     android:id="@+id/detail_ratingbar"
                     android:layout_width="275dp"
                     android:numStars="5"/>
-    <!--            <EditText-->
-    <!--                android:layout_width="275dp"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:hint="input rating here"-->
-    <!--                android:fontFamily="@font/tahoma"-->
-    <!--                android:textSize="25dp"-->
-    <!--                android:contentDescription="input rating here"/>-->
             </TableRow>
 
             <TableRow>

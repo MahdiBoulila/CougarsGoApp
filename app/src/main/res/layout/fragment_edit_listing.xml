@@ -157,10 +157,10 @@
             android:textSize="25dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/edit_listing_back_button"
+            android:id="@+id/edit_listing_delete_button"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Back"
+            android:text="Delete"
             android:layout_marginBottom="25dp"
             android:layout_marginHorizontal="25dp"
             android:background="@color/black"
