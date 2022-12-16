@@ -31,8 +31,12 @@
         <item name="android:textSize">40dp</item>
     </style>
 
-    <style name="CustomBoarder" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="background"></item>
+    <style name="BottomMenu" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">23dp</item>
+    </style>
+
+    <style name="BottomMenuActive" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">25dp</item>
     </style>
 
 </resources>

@@ -5,13 +5,13 @@
     <item
         android:id="@+id/bottom_menu_home"
         android:icon="@drawable/ic_baseline_home_24_white"
-        android:title="Home"
+        android:title="HOME"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/bottom_menu_newlisting"
         android:icon="@drawable/ic_baseline_create_24_white"
-        android:title="New Listing"
+        android:title="NEW LISTING"
         app:showAsAction="never" />
 
 </menu>

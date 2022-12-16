@@ -1,5 +1,4 @@
 package com.example.cougarsgo
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.database.DataSnapshot
@@ -7,7 +6,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.snapshots
 import com.google.firebase.ktx.Firebase
 
 class ViewModel: ViewModel(), ValueEventListener {
@@ -20,7 +18,7 @@ class ViewModel: ViewModel(), ValueEventListener {
     val currentListing = MutableLiveData<ListingModel>()
     val currentUser = MutableLiveData<UserModel>()
 
-    init{
+    init {
         currentUser.value = UserModel()
         users.value = ArrayList<UserModel>()
         listings.value = ArrayList()
@@ -82,6 +80,13 @@ class ViewModel: ViewModel(), ValueEventListener {
         }
         return null
     }
+    /*
+    fun updateCurrentListing(listing: List<ListingModel>){
+        currentListing.value = listing
+        val current_Listing = currentListing.value!!.id
+        database.value?.child(current_Listing)?.setValue(listing)
+    }
+     */
     override fun onDataChange(snapshot: DataSnapshot) {
         val users = ArrayList<UserModel>()
         val listings = ArrayList<ListingModel>()

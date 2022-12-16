@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -16,6 +17,7 @@ class LoginFragment : Fragment() {
     lateinit var email_edittext: EditText
     lateinit var password_edittext: EditText
     lateinit var login_button: Button
+    lateinit var user_name : TextView
     val viewModel: ViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -31,6 +33,7 @@ class LoginFragment : Fragment() {
         login_button = view.findViewById(R.id.login_button)
         email_edittext = view.findViewById(R.id.login_email_edittext)
         password_edittext = view.findViewById(R.id.login_password_edittext)
+        // user_name = view.findViewById(R.id.activity_main_welcome)
 
         login_button.setOnClickListener {
             var email = email_edittext.text.toString()
@@ -53,7 +56,7 @@ class LoginFragment : Fragment() {
                         viewModel.setCurrentUser(userFromDatabase)
                         Toast.makeText(
                             this.requireActivity(),
-                            "Welcome: " + userFromDatabase?.id,
+                            "Welcome: " + userFromDatabase?.username,
                             Toast.LENGTH_SHORT
                         ).show()
                         findNavController().navigate(R.id.action_global_listingsFragment)

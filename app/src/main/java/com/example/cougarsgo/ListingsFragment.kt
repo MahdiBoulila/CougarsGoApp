@@ -23,27 +23,20 @@ class ListingsFragment : Fragment() {
     lateinit var list_recyclerView: RecyclerView
     lateinit var viewManger: RecyclerView.LayoutManager
     lateinit var viewAdapter: RecyclerViewAdapter
-
-
     val viewModel: ViewModel by activityViewModels<ViewModel>()
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         // viewManger = GridLayoutManager(activity, 2)
         viewManger = LinearLayoutManager(activity)
-
         // Get listing arraylist from viewmodel
         val entire_list = viewModel.listings.value!!
         viewAdapter = RecyclerViewAdapter(entire_list.toTypedArray())
-
         // Get list recyclerview
         list_recyclerView = view.findViewById(R.id.listing_recycler_view)
-
         list_recyclerView.layoutManager = viewManger
         list_recyclerView.adapter = viewAdapter
-
 
         val onClickLambda:(ListingModel) -> Unit = {
             // Current Listing = the listing that was clicked
@@ -59,7 +52,6 @@ class ListingsFragment : Fragment() {
             viewAdapter.listingArray = listings.toTypedArray()
             viewAdapter.notifyDataSetChanged()
         })
-
     }
 
     override fun onCreateView(
