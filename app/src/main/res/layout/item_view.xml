@@ -29,7 +29,7 @@
                         android:paddingTop="25dp"
                         android:src="@drawable/c07955070"
                         android:adjustViewBounds="true"
-                        android:scaleType="fitCenter" />
+                        android:scaleType="fitCenter"/>
 
                 </TableRow>
                 <TableRow>
@@ -41,7 +41,9 @@
                         android:textSize="25dp"
                         android:paddingLeft="5dp"
                         android:textStyle="bold"
-                        android:textAllCaps="true"/>
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/tahoma"
+                        android:textColor="@color/black"/>
                     <TextView
                         android:id="@+id/item_view_name"
                         android:layout_width="0dp"
@@ -50,7 +52,7 @@
                         android:textColor="@color/black"
                         android:text="iPhone 13 Pro Max"
                         android:textSize="30dp"
-                        />
+                        android:fontFamily="@font/tahoma"/>
                 </TableRow>
                 <TableRow>
                     <TextView
@@ -61,7 +63,9 @@
                         android:textSize="25dp"
                         android:paddingLeft="5dp"
                         android:textStyle="bold"
-                        android:textAllCaps="true"/>
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/tahoma"
+                        android:textColor="@color/black"/>
                     <TextView
                         android:id="@+id/item_view_description"
                         android:layout_width="0dp"
@@ -71,7 +75,7 @@
                         android:text="iPhone 13 Pro Max"
                         android:textColor="@color/black"
                         android:textSize="30dp"
-                        />
+                        android:fontFamily="@font/tahoma"/>
                 </TableRow>
                 <TableRow>
                     <TextView
@@ -82,7 +86,9 @@
                         android:textSize="25dp"
                         android:paddingLeft="5dp"
                         android:textStyle="bold"
-                        android:textAllCaps="true"/>
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/tahoma"
+                        android:textColor="@color/black"/>
                     <TextView
                         android:id="@+id/item_view_color"
                         android:layout_width="0dp"
@@ -92,7 +98,7 @@
                         android:text="iPhone 13 Pro Max"
                         android:textSize="30dp"
                         android:textColor="@color/black"
-                        />
+                        android:fontFamily="@font/tahoma"/>
                 </TableRow>
                 <TableRow>
                     <TextView
@@ -104,7 +110,8 @@
                         android:textSize="25dp"
                         android:textStyle="bold"
                         android:textAllCaps="true"
-                        />
+                        android:fontFamily="@font/tahoma"
+                        android:textColor="@color/black"/>
                     <TextView
                         android:id="@+id/item_view_price"
                         android:layout_width="0dp"
@@ -113,7 +120,8 @@
                         android:maxWidth="230dp"
                         android:textColor="@color/black"
                         android:text="$1500"
-                        android:textSize="30dp" />
+                        android:textSize="30dp"
+                        android:fontFamily="@font/tahoma"/>
                 </TableRow>
             </TableLayout>
         </LinearLayout>

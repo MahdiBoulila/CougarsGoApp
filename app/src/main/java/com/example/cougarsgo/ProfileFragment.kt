@@ -1,11 +1,13 @@
 package com.example.cougarsgo
 
+import android.media.Rating
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -22,7 +24,7 @@ class ProfileFragment : Fragment() {
 
     lateinit var user_name : TextView
     lateinit var user_email : TextView
-    lateinit var user_rating: TextView
+    lateinit var user_rating: RatingBar
     lateinit var user_img : ImageView
     lateinit var list_recyclerView: RecyclerView
     lateinit var viewManger: RecyclerView.LayoutManager
@@ -34,7 +36,7 @@ class ProfileFragment : Fragment() {
 
         user_name = view.findViewById(R.id.profile_name)
         user_email = view.findViewById(R.id.profile_email)
-        user_rating = view.findViewById(R.id.profile_rating)
+        user_rating = view.findViewById(R.id.profile_ratingbar)
         user_img = view.findViewById(R.id.profile_img)
         list_recyclerView = view.findViewById(R.id.profile_listing_recycler_view)
 
