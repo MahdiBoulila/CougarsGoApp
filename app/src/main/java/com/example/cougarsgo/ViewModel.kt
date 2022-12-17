@@ -43,6 +43,15 @@ class ViewModel: ViewModel(), ValueEventListener {
         currentListing.postValue(listing)
     }
 
+    fun getUserFromID(id : String): UserModel?{
+        val users = users.value!!
+        users.forEach{ user ->
+            if (user.id == id){
+                return user
+            }
+        }
+        return null
+    }
 
     fun setCurrentUser(user: UserModel){
         currentUser.value = user
