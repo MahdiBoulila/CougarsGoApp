@@ -38,6 +38,7 @@ class LoginFragment : Fragment() {
         login_button.setOnClickListener {
             var email = email_edittext.text.toString()
             val password = password_edittext.text.toString()
+            // var username = viewModel.currentUser.value?.username
             if (email.isEmpty()) {
                 email_edittext.setError("Email is required")
                 email_edittext.requestFocus()
@@ -56,7 +57,7 @@ class LoginFragment : Fragment() {
                         viewModel.setCurrentUser(userFromDatabase)
                         Toast.makeText(
                             this.requireActivity(),
-                            "Welcome: " + userFromDatabase?.username,
+                            "Welcome: " + userFromDatabase?.id,
                             Toast.LENGTH_SHORT
                         ).show()
                         findNavController().navigate(R.id.action_global_listingsFragment)

@@ -29,13 +29,14 @@
                         android:paddingTop="25dp"
                         android:src="@drawable/c07955070"
                         android:adjustViewBounds="true"
-                        android:scaleType="fitCenter"/>
+                        android:scaleType="fitCenter"
+                        android:layout_marginBottom="20dp" />
 
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_weight="0.37"
+                        android:layout_weight="0.5"
                         android:layout_height="match_parent"
                         android:text="Name:"
                         android:textSize="25dp"
@@ -57,9 +58,9 @@
                 <TableRow>
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_weight="0.37"
+                        android:layout_weight="0.5"
                         android:layout_height="match_parent"
-                        android:text="Condition:"
+                        android:text="Description:"
                         android:textSize="25dp"
                         android:paddingLeft="5dp"
                         android:textStyle="bold"
@@ -80,7 +81,7 @@
                 <TableRow>
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_weight="0.37"
+                        android:layout_weight="0.5"
                         android:layout_height="match_parent"
                         android:text="Color:"
                         android:textSize="25dp"
@@ -103,7 +104,7 @@
                 <TableRow>
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_weight="0.37"
+                        android:layout_weight="0.5"
                         android:layout_height="match_parent"
                         android:text="Price: "
                         android:paddingLeft="10dp"
