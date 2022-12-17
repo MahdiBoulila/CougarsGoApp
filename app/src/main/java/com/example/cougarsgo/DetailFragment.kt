@@ -4,6 +4,7 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,7 +39,7 @@ class DetailFragment : Fragment() {
 
         //get user from listing's id
         val current_listing = viewModel.currentListing.value!!
-        val id = current_listing.id
+        val id = current_listing.sellerID
         val seller = viewModel.getUserFromID(id)
 
 
@@ -54,7 +55,7 @@ class DetailFragment : Fragment() {
         contact_btn.setOnClickListener{
                 val mailto = "mailto:${seller?.email}" +
                         "?cc=no-reply@cougarsgo.edu" +
-                        "&subject=" + Uri.encode("CougarsGo: Potential Buyer for ${detail_name.text} ID:${current_listing.id.takeLast(4)}") +
+                        "&subject=" + Uri.encode("CougarsGo: Potential Buyer for '${detail_name.text}', ID:${current_listing.id.takeLast(4)}") +
                         "&body=" + Uri.encode("Hello Clarkie!")
                 val emailIntent = Intent(Intent.ACTION_SENDTO)
                 emailIntent.data = Uri.parse(mailto)
