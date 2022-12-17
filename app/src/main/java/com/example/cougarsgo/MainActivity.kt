@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         // TODO add username to activity main
         user_name = findViewById(R.id.activity_main_welcome)
-        user_name.setText("WELCOME " + viewModel.currentUser.value?.email)
+        user_name.setText("WELCOME " + viewModel.currentUser.value?.username)
 
         findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener {
             if (it.itemId == R.id.bottom_menu_home){

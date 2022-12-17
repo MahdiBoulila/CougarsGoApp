@@ -28,7 +28,6 @@ class ListingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // viewManger = GridLayoutManager(activity, 2)
         viewManger = LinearLayoutManager(activity)
         // Get listing arraylist from viewmodel
         val entire_list = viewModel.listings.value!!
@@ -53,6 +52,7 @@ class ListingsFragment : Fragment() {
             viewAdapter.notifyDataSetChanged()
         })
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

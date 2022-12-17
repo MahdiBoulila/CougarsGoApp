@@ -29,19 +29,22 @@
                         android:paddingTop="25dp"
                         android:src="@drawable/c07955070"
                         android:adjustViewBounds="true"
-                        android:scaleType="fitCenter" />
+                        android:scaleType="fitCenter"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/tahoma"/>
 
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_weight="0.37"
+                        android:layout_weight="0.5"
                         android:layout_height="match_parent"
                         android:text="Name:"
                         android:textSize="25dp"
                         android:paddingLeft="5dp"
                         android:textStyle="bold"
-                        android:textAllCaps="true"/>
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/tahoma"/>
                     <TextView
                         android:id="@+id/item_view_name"
                         android:layout_width="0dp"
@@ -50,18 +53,20 @@
                         android:textColor="@color/black"
                         android:text="iPhone 13 Pro Max"
                         android:textSize="30dp"
+                        android:fontFamily="@font/tahoma"
                         />
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_weight="0.37"
+                        android:layout_weight="0.5"
                         android:layout_height="match_parent"
-                        android:text="Condition:"
+                        android:text="Description:"
                         android:textSize="25dp"
                         android:paddingLeft="5dp"
                         android:textStyle="bold"
-                        android:textAllCaps="true"/>
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/tahoma"/>
                     <TextView
                         android:id="@+id/item_view_description"
                         android:layout_width="0dp"
@@ -71,18 +76,20 @@
                         android:text="iPhone 13 Pro Max"
                         android:textColor="@color/black"
                         android:textSize="30dp"
+                        android:fontFamily="@font/tahoma"
                         />
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_weight="0.37"
+                        android:layout_weight="0.5"
                         android:layout_height="match_parent"
                         android:text="Color:"
                         android:textSize="25dp"
                         android:paddingLeft="5dp"
                         android:textStyle="bold"
-                        android:textAllCaps="true"/>
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/tahoma"/>
                     <TextView
                         android:id="@+id/item_view_color"
                         android:layout_width="0dp"
@@ -92,18 +99,20 @@
                         android:text="iPhone 13 Pro Max"
                         android:textSize="30dp"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/tahoma"
                         />
                 </TableRow>
                 <TableRow>
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_weight="0.37"
+                        android:layout_weight="0.5"
                         android:layout_height="match_parent"
                         android:text="Price: "
                         android:paddingLeft="10dp"
                         android:textSize="25dp"
                         android:textStyle="bold"
                         android:textAllCaps="true"
+                        android:fontFamily="@font/tahoma"
                         />
                     <TextView
                         android:id="@+id/item_view_price"
@@ -113,7 +122,8 @@
                         android:maxWidth="230dp"
                         android:textColor="@color/black"
                         android:text="$1500"
-                        android:textSize="30dp" />
+                        android:textSize="30dp"
+                        android:fontFamily="@font/tahoma"/>
                 </TableRow>
             </TableLayout>
         </LinearLayout>
