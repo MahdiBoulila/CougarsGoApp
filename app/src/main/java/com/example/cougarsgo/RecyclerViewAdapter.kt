@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -30,10 +31,35 @@ class RecyclerViewAdapter(var listingArray: Array<ListingModel>) : RecyclerView.
             viewItem.findViewById<TextView>(R.id.item_view_description).text = Listing.description
             viewItem.findViewById<TextView>(R.id.item_view_price).text = Listing.price.toString()
             viewItem.findViewById<TextView>(R.id.item_view_color).text = Listing.color
+            viewItem.findViewById<ImageView>(R.id.item_view_image).setImageResource(
+                returnImageFromCategory(Listing.category)
+            )
             viewItem.setOnClickListener {
                 onClick(Listing)
             }
         }
+        fun returnImageFromCategory(category : String): Int{
+
+            if(category == "Electronics") {
+                return R.drawable.ic_baseline_computer_24
+            } else if (category == "Food") {
+                return R.drawable.ic_baseline_fastfood_24
+            } else if (category == "Clothing") {
+                return R.drawable.ic_baseline_checkroom_24
+            } else if (category == "Cleaning Supplies") {
+                return R.drawable.ic_baseline_cleaning_services_24
+            } else if (category == "Furniture") {
+                return R.drawable.ic_baseline_chair_24
+            } else if (category == "Academic") {
+                return R.drawable.ic_baseline_menu_book_24
+            } else if (category == "Arts and Crafts") {
+                return R.drawable.ic_baseline_format_paint_24
+            } else {
+                return R.drawable.ic_baseline_question_mark_24
+            }
+        }
     }
+
+
 }
 

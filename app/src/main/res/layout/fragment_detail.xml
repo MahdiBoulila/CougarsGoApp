@@ -81,27 +81,6 @@
                     android:textSize="25dp"/>
             </TableRow>
 
-            <TableRow>
-                <TextView
-                    android:layout_width="134dp"
-                    android:layout_height="wrap_content"
-                    android:text="Condition"
-                    android:paddingLeft="10dp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/tahoma"
-                    android:textSize="25dp"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:id="@+id/detail_product_condition"
-                    android:layout_width="275dp"
-                    android:layout_height="wrap_content"
-                    android:text="Refurbished"
-                    android:paddingLeft="10dp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/tahoma"
-                    android:textSize="25dp"/>
-            </TableRow>
-
             <TableRow android:layout_height="wrap_content">
 
                 <TextView

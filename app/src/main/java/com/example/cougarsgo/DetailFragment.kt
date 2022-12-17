@@ -17,7 +17,9 @@ import androidx.fragment.app.activityViewModels
 class DetailFragment : Fragment() {
 
     lateinit var detail_name : TextView
+    lateinit var seller_name : TextView
     lateinit var detail_description: TextView
+    lateinit var detail_category : TextView
     lateinit var detail_price : TextView
     lateinit var detail_color : TextView
     lateinit var contact_btn: Button
@@ -28,9 +30,11 @@ class DetailFragment : Fragment() {
 
         contact_btn = view.findViewById(R.id.detail_contact_button)
         detail_name = view.findViewById(R.id.detail_product_name)
+        seller_name = view.findViewById(R.id.detail_seller_name)
         detail_description = view.findViewById(R.id.detail_product_description)
-        detail_price = view.findViewById(R.id.detail_product_condition)
-        detail_color = view.findViewById(R.id.detail_seller_name)
+        // detail_price = view.findViewById(R.id.)
+        // detail_color = view.findViewById(R.id.)
+        // detail_category = view.findViewById(R.id.)
 
         //get user from listing's id
         val current_listing = viewModel.currentListing.value!!
@@ -40,9 +44,11 @@ class DetailFragment : Fragment() {
 
         viewModel.currentListing.observe(viewLifecycleOwner, {
             detail_name.text = it.name
+            seller_name.text = viewModel.currentUser.value?.username
             detail_description.text = it.description
-            detail_price.text = it.price.toString()
-            detail_color.text = it.color
+            // detail_price.text = it.price.toString()
+            // detail_color.text = it.color
+            // detail_category = it.category
         })
 
         contact_btn.setOnClickListener{
