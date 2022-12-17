@@ -46,9 +46,9 @@
 
             <TableRow>
                 <TextView
-                    android:layout_width="134dp"
+                    android:layout_width="142dp"
                     android:layout_height="wrap_content"
-                    android:text="Rating"
+                    android:text="Rating:"
                     android:paddingLeft="10dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/tahoma"
@@ -56,15 +56,15 @@
                     android:textStyle="bold"/>
                 <androidx.appcompat.widget.AppCompatRatingBar
                     android:id="@+id/detail_ratingbar"
-                    android:layout_width="275dp"
+                    android:layout_width="245dp"
                     android:numStars="5"/>
             </TableRow>
 
             <TableRow>
                 <TextView
-                    android:layout_width="134dp"
+                    android:layout_width="142dp"
                     android:layout_height="wrap_content"
-                    android:text="Seller's Name"
+                    android:text="Seller's Name:"
                     android:paddingLeft="10dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/tahoma"
@@ -72,9 +72,72 @@
                     android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/detail_seller_name"
-                    android:layout_width="275dp"
+                    android:layout_width="245dp"
                     android:layout_height="wrap_content"
                     android:text="Shuo Niu"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    android:text="Product Category:"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/detail_product_category"
+                    android:layout_width="245dp"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    android:text="Condition:"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/detail_product_condition"
+                    android:layout_width="245dp"
+                    android:layout_height="wrap_content"
+                    android:text="Refurbished"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    android:text="Color:"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/detail_product_color"
+                    android:layout_width="245dp"
+                    android:layout_height="wrap_content"
+                    android:text="Red"
                     android:paddingLeft="10dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/tahoma"
@@ -84,10 +147,10 @@
             <TableRow android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="134dp"
+                    android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
-                    android:text="Description"
+                    android:text="Description:"
                     android:textColor="@color/black"
                     android:fontFamily="@font/tahoma"
                     android:textSize="25dp"
@@ -95,7 +158,7 @@
 
                 <TextView
                     android:id="@+id/detail_product_description"
-                    android:layout_width="275dp"
+                    android:layout_width="245dp"
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
                     android:text="Phone looks clean. Has a phone class included and original charger"
