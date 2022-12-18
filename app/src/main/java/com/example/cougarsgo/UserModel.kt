@@ -6,7 +6,7 @@ class UserModel(
     var email: String = "",
     var password: String ="",
     var listingsID: ArrayList<String> = ArrayList(),
-    var rating: Float = 0F,
+    var rating: Float = 5F,
 ) {
     init {
 

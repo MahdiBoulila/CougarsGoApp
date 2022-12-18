@@ -9,21 +9,32 @@ import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-// @Version 1.0
+// @Version 1.1
 class MainActivity : AppCompatActivity() {
 
+<<<<<<< HEAD
     // lateinit var user_name : TextView
     val viewModel : ViewModel by viewModels<ViewModel>()
+=======
+    lateinit var user_name : TextView
+    val viewModel : ViewModel by viewModels()
+>>>>>>> 1090955e1b2752df94cd7c4dc3400b179df27c96
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+<<<<<<< HEAD
         // TODO add username to activity main
        // user_name = findViewById(R.id.activity_main_welcome)
        // user_name.setText("WELCOME " + viewModel.currentUser.value?.username)
+=======
+
+>>>>>>> 1090955e1b2752df94cd7c4dc3400b179df27c96
         findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener {
             if (it.itemId == R.id.bottom_menu_home){
                 findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_listingsFragment)

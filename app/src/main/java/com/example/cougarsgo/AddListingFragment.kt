@@ -90,7 +90,6 @@ class AddListingFragment : Fragment() {
         }
 
         create_button.setOnClickListener{
-            // val image = add_image.setImageResource(0)
             val name = add_name.text.toString()
             val description = add_description.text.toString()
             val price = add_price.text.toString()

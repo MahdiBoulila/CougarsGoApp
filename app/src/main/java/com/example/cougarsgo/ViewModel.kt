@@ -1,4 +1,5 @@
 package com.example.cougarsgo
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.database.DataSnapshot
@@ -42,6 +43,20 @@ class ViewModel: ViewModel(), ValueEventListener {
         currentListing.value = listing
         currentListing.postValue(listing)
     }
+<<<<<<< HEAD
+=======
+
+    fun getUserFromID(id : String): UserModel?{
+        val users = users.value!!
+        users.forEach{ user ->
+            if (user.id == id){
+                return user
+            }
+        }
+        return null
+    }
+
+>>>>>>> 1090955e1b2752df94cd7c4dc3400b179df27c96
     fun setCurrentUser(user: UserModel){
         currentUser.value = user
         currentUser.postValue(user)
