@@ -27,7 +27,6 @@ class ListingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         viewManger = LinearLayoutManager(activity)
         // Get listing arraylist from viewmodel
         val entire_list = viewModel.listings.value!!
@@ -60,8 +59,12 @@ class ListingsFragment : Fragment() {
         // This shows the information
         // This method is triggered by postvalue
         viewModel.listings.observe(viewLifecycleOwner, {
-            val listings = viewModel.listings.value!!
-            viewAdapter.listingArray = listings.toTypedArray()
+            viewAdapter.listingArray = viewModel.listings.value!!.toTypedArray()
+            viewAdapter.notifyDataSetChanged()
+        })
+
+        viewModel.fontsize.observe(viewLifecycleOwner, {
+            viewAdapter.fontsize = viewModel.fontsize.value!!
             viewAdapter.notifyDataSetChanged()
         })
 

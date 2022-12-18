@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,7 +46,6 @@ class DetailFragment : Fragment() {
         val id = current_listing.sellerID
         val seller = viewModel.getUserFromID(id)
 
-
         viewModel.currentListing.observe(viewLifecycleOwner, {
             detail_name.text = it.name
             seller_name.text = viewModel.currentUser.value?.username
@@ -53,7 +53,6 @@ class DetailFragment : Fragment() {
             detail_price.text = it.price.toString()
             detail_color.text = it.color
         })
-
 
         // Delete button only appears if the listing was created by the current user
         detail_delete_button.setVisibility(View.INVISIBLE);
@@ -64,6 +63,13 @@ class DetailFragment : Fragment() {
                 findNavController().navigate(R.id.action_global_listingsFragment)
             }
         }
+
+        viewModel.fontsize.observe(viewLifecycleOwner, {
+            val fontsize = viewModel.fontsize.value!!
+            detail_name.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontsize)
+            seller_name.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontsize)
+            detail_description.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontsize)
+        })
 
         contact_btn.setOnClickListener{
                 val mailto = "mailto:${seller?.email}" +

@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -18,8 +19,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
 
     // lateinit var user_name : TextView
-    val viewModel : ViewModel by viewModels<ViewModel>()
     lateinit var user_name : TextView
+    val viewModel : ViewModel by viewModels()
+    lateinit var increase_text_btn: Button
+    lateinit var decrease_text_btn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +30,29 @@ class MainActivity : AppCompatActivity() {
         // TODO add username to activity main
        // user_name = findViewById(R.id.activity_main_welcome)
        // user_name.setText("WELCOME " + viewModel.currentUser.value?.username)
+        increase_text_btn = findViewById(R.id.increase_text_size)
+        increase_text_btn.setOnClickListener{
+            var fontsize = viewModel.fontsize.value!!
+            if ((fontsize >= 20) && (fontsize < 30)){
+                fontsize = fontsize + 5f
+                viewModel.fontsize.value = fontsize
+                viewModel.fontsize.postValue(fontsize)
+            }
+//            Log.i("main activity", "current fontsize: " + fontsize)
+
+        }
+
+        decrease_text_btn = findViewById(R.id.decrease_text_size)
+        decrease_text_btn.setOnClickListener{
+            var fontsize = viewModel.fontsize.value!!
+            if ((fontsize <= 30f) && (fontsize >20)){
+                fontsize = fontsize - 5f
+                viewModel.fontsize.value = fontsize
+                viewModel.fontsize.postValue(fontsize)
+            }
+//            Log.i("main activity", "current fontsize: " + fontsize)
+        }
+
         findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener {
             if (it.itemId == R.id.bottom_menu_home){
                 findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_listingsFragment)

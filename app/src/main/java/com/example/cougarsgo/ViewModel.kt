@@ -12,7 +12,7 @@ import com.google.firebase.ktx.Firebase
 class ViewModel: ViewModel(), ValueEventListener {
     val database = MutableLiveData<DatabaseReference>()
     val listings = MutableLiveData<ArrayList<ListingModel>>()
-    val fontsize = MutableLiveData<Number>()
+    val fontsize = MutableLiveData<Float>()
     val users = MutableLiveData<ArrayList<UserModel>>()
 
     // Current Listing
@@ -23,7 +23,7 @@ class ViewModel: ViewModel(), ValueEventListener {
         currentUser.value = UserModel()
         users.value = ArrayList<UserModel>()
         listings.value = ArrayList()
-        fontsize.value = 24f
+        fontsize.value = 25f
         database.value = Firebase.database.getReference("")
         database.value?.addValueEventListener(this)
     }
@@ -88,6 +88,7 @@ class ViewModel: ViewModel(), ValueEventListener {
         }
         return null
     }
+
     override fun onDataChange(snapshot: DataSnapshot) {
         val users = ArrayList<UserModel>()
         val listings = ArrayList<ListingModel>()

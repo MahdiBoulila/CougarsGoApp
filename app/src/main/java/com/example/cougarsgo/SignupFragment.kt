@@ -33,7 +33,6 @@ class SignupFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        password_edittext = view.findViewById(R.id.listing_description_edittext)
         signup_button = view.findViewById(R.id.signup_button)
         email_edittext = view.findViewById(R.id.signup_email_edittext)
         password_edittext = view.findViewById(R.id.signup_password_edittext)
