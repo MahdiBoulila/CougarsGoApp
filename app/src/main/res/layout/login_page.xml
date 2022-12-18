@@ -5,21 +5,15 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="center">
 
-
-        <TextView
-            android:id="@+id/login_welcome_message"
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginHorizontal="25dp"
-            android:text="Welcome Back to CougarsGo!"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:fontFamily="@font/tahoma"/>
+            android:src="@drawable/logo_full"
+            android:layout_gravity="start"
+            android:paddingVertical="10dp"/>
 
         <TextView
             android:id="@+id/login_email_textview"
