@@ -24,7 +24,6 @@ class DetailFragment : Fragment() {
     lateinit var detail_category : TextView
     lateinit var detail_price : TextView
     lateinit var detail_color : TextView
-    lateinit var detail_condition : TextView
     lateinit var detail_delete_button : Button
     lateinit var contact_btn: Button
     val viewModel: ViewModel by activityViewModels()
