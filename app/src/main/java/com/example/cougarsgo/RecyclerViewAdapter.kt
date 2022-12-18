@@ -2,20 +2,26 @@ package com.example.cougarsgo
 
 
 import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.RecyclerView
 
+
 class RecyclerViewAdapter(var listingArray: Array<ListingModel>) : RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder>(){
+
     lateinit var onClick: (ListingModel) -> Unit
+    var fontsize: Float = 25f
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
         val viewItem =
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_view, parent, false)
-        return RecyclerViewHolder(viewItem, onClick)
+        return RecyclerViewHolder(viewItem, onClick, fontsize)
     }
     override fun getItemCount(): Int {
 
@@ -25,18 +31,23 @@ class RecyclerViewAdapter(var listingArray: Array<ListingModel>) : RecyclerView.
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
         holder.bind(listingArray[position])
     }
-    class RecyclerViewHolder(val viewItem: View, val onClick: (ListingModel) -> Unit) : RecyclerView.ViewHolder(viewItem) {
+    class RecyclerViewHolder(val viewItem: View, val onClick: (ListingModel) -> Unit, val fontsize: Float) : RecyclerView.ViewHolder(viewItem) {
         fun bind(Listing: ListingModel) {
             viewItem.findViewById<TextView>(R.id.item_view_name).text = Listing.name
+            viewItem.findViewById<TextView>(R.id.item_view_name).setTextSize(TypedValue.COMPLEX_UNIT_SP, fontsize)
             viewItem.findViewById<TextView>(R.id.item_view_description).text = Listing.description
+            viewItem.findViewById<TextView>(R.id.item_view_description).setTextSize(TypedValue.COMPLEX_UNIT_SP, fontsize)
             viewItem.findViewById<TextView>(R.id.item_view_price).text = Listing.price.toString()
+            viewItem.findViewById<TextView>(R.id.item_view_price).setTextSize(TypedValue.COMPLEX_UNIT_SP, fontsize)
             viewItem.findViewById<TextView>(R.id.item_view_color).text = Listing.color
+            viewItem.findViewById<TextView>(R.id.item_view_color).setTextSize(TypedValue.COMPLEX_UNIT_SP, fontsize)
             viewItem.findViewById<ImageView>(R.id.item_view_image).setImageResource(
                 returnImageFromCategory(Listing.category)
             )
             viewItem.setOnClickListener {
                 onClick(Listing)
             }
+
         }
         fun returnImageFromCategory(category : String): Int{
 

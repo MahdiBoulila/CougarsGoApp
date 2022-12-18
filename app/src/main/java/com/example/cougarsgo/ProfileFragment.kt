@@ -2,6 +2,7 @@ package com.example.cougarsgo
 
 import android.media.Rating
 import android.os.Bundle
+import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -55,12 +56,21 @@ class ProfileFragment : Fragment() {
         viewModel.currentUser.observe(viewLifecycleOwner, {
             user_name.text = it.username
             user_email.text = it.email + ".edu"
+            user_rating.rating = it.rating
             // Filter listing based on user
             val listings = viewModel.listings.value!!
             val user_listings = listings.filter{
                 it.sellerID == viewModel.currentUser.value?.id
             }
             viewAdapter.listingArray = user_listings.toTypedArray()
+            viewAdapter.notifyDataSetChanged()
+        })
+
+        viewModel.fontsize.observe(viewLifecycleOwner, {
+            val fontsize = viewModel.fontsize.value!!
+            viewAdapter.fontsize = fontsize
+            user_name.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontsize)
+            user_email.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontsize)
             viewAdapter.notifyDataSetChanged()
         })
 
