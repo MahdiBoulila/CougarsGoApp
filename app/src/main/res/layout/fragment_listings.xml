@@ -6,11 +6,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ListingsFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listing_recycler_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="9"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="search"
+            android:contentDescription="search"
+            android:layout_weight="1"
+            android:scrollbarSize="20dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listing_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    </LinearLayout>
 </LinearLayout>

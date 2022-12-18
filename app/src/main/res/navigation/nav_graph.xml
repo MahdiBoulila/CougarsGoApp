@@ -7,11 +7,13 @@
     <fragment
         android:id="@+id/signupFragment2"
         android:name="com.example.cougarsgo.SignupFragment"
-        android:label="SignupFragment" />
+        android:label="SignupFragment"
+        tools:layout="@layout/signup_page"/>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.cougarsgo.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment"
+        tools:layout="@layout/login_page"/>
     <action
         android:id="@+id/action_global_signupFragment"
         app:destination="@id/signupFragment2" />
@@ -50,9 +52,4 @@
     <action
         android:id="@+id/action_global_addListingFragment"
         app:destination="@id/addListingFragment" />
-    <fragment
-        android:id="@+id/fragment_edit_listing"
-        android:name="com.example.cougarsgo.fragment_edit_listing"
-        android:label="fragment_edit_listing"
-        tools:layout="@layout/fragment_edit_listing" />
 </navigation>

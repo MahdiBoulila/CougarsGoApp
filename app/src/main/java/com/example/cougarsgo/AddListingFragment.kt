@@ -93,7 +93,7 @@ class AddListingFragment : Fragment() {
             // val image = add_image.setImageResource(0)
             val name = add_name.text.toString()
             val description = add_description.text.toString()
-            val price = "$" + add_price.text.toString()
+            val price = add_price.text.toString()
 
             if ((name.isNotBlank() && description.isNotBlank() && price.isNotBlank())){
                 val id = UUID.randomUUID().toString()
@@ -102,6 +102,7 @@ class AddListingFragment : Fragment() {
                 viewModel.addListingToCurrentUser(id)
                 Toast.makeText(activity, "Successfully Created A Listing!", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_global_listingsFragment)
+                Log.d("newlisting", listing.toString())
             } else {
                 if (name.isEmpty()) {
                     add_name.setError("Product Name is required")

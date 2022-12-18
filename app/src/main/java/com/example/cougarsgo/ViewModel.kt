@@ -42,26 +42,24 @@ class ViewModel: ViewModel(), ValueEventListener {
         currentListing.value = listing
         currentListing.postValue(listing)
     }
-
-
     fun setCurrentUser(user: UserModel){
         currentUser.value = user
         currentUser.postValue(user)
     }
-
+    fun removeCurrentListing(id: String?){
+        if(currentListing.value != null){
+            database.value?.child("listings")?.child(id.toString())?.removeValue()
+        }
+    }
     fun insertNewListing(listing: ListingModel){
         if(currentUser.value != null) {
             database.value?.child("listings")?.child(listing.id.toString())?.setValue(listing)
         }
-
     }
     fun addListingToCurrentUser(id : String){
         if (id != null){
             currentUser.value?.listingsID?.add(id)
         }
-    }
-    fun updateUserListings(listing: ListingModel){
-
     }
     fun isUserInDatabase(email: String): Boolean{
         val users = users.value!!
@@ -70,7 +68,6 @@ class ViewModel: ViewModel(), ValueEventListener {
         }
         return false
     }
-
     fun getUserFromDatabase(email: String, password: String): UserModel? {
         val users = users.value!!
         users.forEach{ user ->
@@ -80,13 +77,6 @@ class ViewModel: ViewModel(), ValueEventListener {
         }
         return null
     }
-    /*
-    fun updateCurrentListing(listing: List<ListingModel>){
-        currentListing.value = listing
-        val current_Listing = currentListing.value!!.id
-        database.value?.child(current_Listing)?.setValue(listing)
-    }
-     */
     override fun onDataChange(snapshot: DataSnapshot) {
         val users = ArrayList<UserModel>()
         val listings = ArrayList<ListingModel>()

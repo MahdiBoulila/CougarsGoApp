@@ -15,16 +15,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 // @Version 1.0
 class MainActivity : AppCompatActivity() {
 
-    lateinit var user_name : TextView
+    // lateinit var user_name : TextView
     val viewModel : ViewModel by viewModels<ViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         // TODO add username to activity main
-        user_name = findViewById(R.id.activity_main_welcome)
-        user_name.setText("WELCOME " + viewModel.currentUser.value?.username)
-
+       // user_name = findViewById(R.id.activity_main_welcome)
+       // user_name.setText("WELCOME " + viewModel.currentUser.value?.username)
         findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener {
             if (it.itemId == R.id.bottom_menu_home){
                 findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_listingsFragment)

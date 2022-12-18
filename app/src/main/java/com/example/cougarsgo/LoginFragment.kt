@@ -57,7 +57,7 @@ class LoginFragment : Fragment() {
                         viewModel.setCurrentUser(userFromDatabase)
                         Toast.makeText(
                             this.requireActivity(),
-                            "Welcome: " + userFromDatabase?.id,
+                            "Welcome: " + userFromDatabase?.email,
                             Toast.LENGTH_SHORT
                         ).show()
                         findNavController().navigate(R.id.action_global_listingsFragment)

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -19,6 +20,8 @@ class SignupFragment : Fragment() {
 
     lateinit var email_edittext: EditText
     lateinit var password_edittext: EditText
+    lateinit var username_edittext: EditText
+    lateinit var user_name : TextView
     lateinit var signup_button : Button
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,10 +36,12 @@ class SignupFragment : Fragment() {
         signup_button = view.findViewById(R.id.create_button)
         email_edittext = view.findViewById(R.id.listing_email_edittext)
         password_edittext = view.findViewById(R.id.listing_description_edittext)
+        username_edittext = view.findViewById(R.id.listing_username_edittext)
 
         signup_button.setOnClickListener{
             val email = email_edittext.text.toString()
             val password = password_edittext.text.toString()
+            val username = username_edittext.text.toString()
             if(email.isEmpty()){
                 email_edittext.setError("Email is required")
                 email_edittext.requestFocus()
@@ -56,11 +61,14 @@ class SignupFragment : Fragment() {
                 password_edittext.setError("Minimum password length is 6 characters")
                 password_edittext.requestFocus()
                 return@setOnClickListener
+            } else if (username.isEmpty()){
+                username_edittext.setError("Username is required")
+                username_edittext.requestFocus()
+                return@setOnClickListener
             }
             else  {
-//                val id = Random.nextInt(10000,99999)
                 val id = UUID.randomUUID().toString()
-                val user = UserModel(email = email.dropLast(4), password = password, id = id)
+                val user = UserModel(username = username, email = email.dropLast(4), password = password, id = id)
                 viewModel.createUser(user)
                 viewModel.setCurrentUser(user)
                 Toast.makeText(this.requireActivity(), "User Created. Successfully Logged in!", Toast.LENGTH_SHORT).show()

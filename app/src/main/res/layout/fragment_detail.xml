@@ -101,28 +101,6 @@
                     android:fontFamily="@font/tahoma"
                     android:textSize="25dp"/>
             </TableRow>
-
-            <TableRow>
-                <TextView
-                    android:layout_width="142dp"
-                    android:layout_height="wrap_content"
-                    android:text="Condition:"
-                    android:paddingLeft="10dp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/tahoma"
-                    android:textSize="25dp"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:id="@+id/detail_product_condition"
-                    android:layout_width="245dp"
-                    android:layout_height="wrap_content"
-                    android:text="Refurbished"
-                    android:paddingLeft="10dp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/tahoma"
-                    android:textSize="25dp"/>
-            </TableRow>
-
             <TableRow>
                 <TextView
                     android:layout_width="142dp"
@@ -138,6 +116,27 @@
                     android:layout_width="245dp"
                     android:layout_height="wrap_content"
                     android:text="Red"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    android:text="Price:"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/tahoma"
+                    android:textSize="25dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/detail_product_price"
+                    android:layout_width="245dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
                     android:paddingLeft="10dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/tahoma"
@@ -184,6 +183,22 @@
                 android:textSize="25dp"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/detail_delete_button"
+                android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:text="Delete"
+                android:layout_marginHorizontal="135dp"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:fontFamily="@font/tahoma"
+                android:textSize="25dp"/>
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>
