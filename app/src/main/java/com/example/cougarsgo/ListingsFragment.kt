@@ -1,10 +1,12 @@
 package com.example.cougarsgo
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -39,16 +41,6 @@ class ListingsFragment : Fragment() {
         searchView = view.findViewById(R.id.listing_searchview)
         searchView.queryHint = "Search"
 
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
-            android.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return false
-            }
-        })
-
         val onClickLambda:(ListingModel) -> Unit = {
             // Current Listing = the listing that was clicked
             viewModel.getCurrentListing(it)
@@ -68,10 +60,39 @@ class ListingsFragment : Fragment() {
             viewAdapter.notifyDataSetChanged()
         })
 
+        fun filter(text: String): ArrayList<ListingModel> {
+            val filter_list_by_search: ArrayList<ListingModel> = ArrayList()
+            for (item in viewAdapter.listingArray) {
+                if (item.name.contains(text) || (item.description.contains(text))) {
+                    filter_list_by_search.add(item)
+                    Log.d("filter", item.name)
+                }
+            }
+            return filter_list_by_search
+        }
 
-
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            android.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+            override fun onQueryTextChange(newText: String): Boolean {
+                if (newText.isNotBlank()) {
+                    viewModel.listings.observe(viewLifecycleOwner, {
+                        viewAdapter.listingArray = filter(newText).toTypedArray()
+                        viewAdapter.notifyDataSetChanged()
+                    })
+                }
+                else {
+                    viewModel.listings.observe(viewLifecycleOwner, {
+                        viewAdapter.listingArray = viewModel.listings.value!!.toTypedArray()
+                        viewAdapter.notifyDataSetChanged()
+                    })
+                }
+                return false
+            }
+        })
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
