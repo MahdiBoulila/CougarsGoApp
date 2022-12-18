@@ -10,13 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <SearchView
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/listing_searchview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="search"
-            android:contentDescription="search"
             android:layout_weight="1"
-            android:scrollbarSize="20dp" />
+            android:scrollbarSize="20dp"
+            android:queryHint="Search" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listing_recycler_view"
             android:layout_width="match_parent"

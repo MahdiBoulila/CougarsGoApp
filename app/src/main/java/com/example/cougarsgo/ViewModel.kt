@@ -39,12 +39,9 @@ class ViewModel: ViewModel(), ValueEventListener {
     // to fetch detail
     fun getCurrentListing(listing: ListingModel){
         // Test
-//        Log.d("currentlisting", listing.toString())
         currentListing.value = listing
         currentListing.postValue(listing)
     }
-<<<<<<< HEAD
-=======
 
     fun getUserFromID(id : String): UserModel?{
         val users = users.value!!
@@ -56,7 +53,6 @@ class ViewModel: ViewModel(), ValueEventListener {
         return null
     }
 
->>>>>>> 1090955e1b2752df94cd7c4dc3400b179df27c96
     fun setCurrentUser(user: UserModel){
         currentUser.value = user
         currentUser.postValue(user)

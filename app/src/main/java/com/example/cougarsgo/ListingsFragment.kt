@@ -1,13 +1,12 @@
 package com.example.cougarsgo
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +22,7 @@ class ListingsFragment : Fragment() {
     lateinit var list_recyclerView: RecyclerView
     lateinit var viewManger: RecyclerView.LayoutManager
     lateinit var viewAdapter: RecyclerViewAdapter
+    lateinit var searchView : SearchView
     val viewModel: ViewModel by activityViewModels<ViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,6 +36,19 @@ class ListingsFragment : Fragment() {
         list_recyclerView = view.findViewById(R.id.listing_recycler_view)
         list_recyclerView.layoutManager = viewManger
         list_recyclerView.adapter = viewAdapter
+
+        searchView = view.findViewById(R.id.listing_searchview)
+        searchView.queryHint = "Search"
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            android.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+        })
 
         val onClickLambda:(ListingModel) -> Unit = {
             // Current Listing = the listing that was clicked
@@ -51,6 +64,9 @@ class ListingsFragment : Fragment() {
             viewAdapter.listingArray = listings.toTypedArray()
             viewAdapter.notifyDataSetChanged()
         })
+
+
+
     }
 
 
