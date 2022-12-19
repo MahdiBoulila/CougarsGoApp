@@ -8,12 +8,16 @@
         android:layout_height="match_parent"
         android:gravity="center">
 
-        <ImageView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/logo_full"
-            android:layout_gravity="start"
-            android:paddingVertical="10dp"/>
+            android:text="Welcome Back to CougarsGo!"
+            android:textColor="@color/black"
+            android:fontFamily="@font/tahoma"
+            android:textAlignment="center"
+            android:layout_marginVertical="10dp"
+            android:textSize="30dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/login_email_textview"
