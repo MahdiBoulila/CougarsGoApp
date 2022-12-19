@@ -1,10 +1,40 @@
 {
   "project_info": {
     "project_number": "422903895097",
+    "firebase_url": "https://cougarsgo-b58f8-default-rtdb.firebaseio.com",
     "project_id": "cougarsgo-b58f8",
     "storage_bucket": "cougarsgo-b58f8.appspot.com"
   },
   "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422903895097:android:12645fc3d971748a0c69e8",
+        "android_client_info": {
+          "package_name": "com.cougarsgo.cougarsgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422903895097-8aoualjj1orsgaog2jf68t15u2grcurl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnotVgPuptZZsgQw5l-NMiM-L8VkAJiOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422903895097-8aoualjj1orsgaog2jf68t15u2grcurl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
     {
       "client_info": {
         "mobilesdk_app_id": "1:422903895097:android:a9c790d8bbf5a8f80c69e8",

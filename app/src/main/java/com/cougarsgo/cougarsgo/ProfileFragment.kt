@@ -1,6 +1,5 @@
-package com.example.cougarsgo
+package com.cougarsgo.cougarsgo
 
-import android.media.Rating
 import android.os.Bundle
 import android.util.TypedValue
 import androidx.fragment.app.Fragment
@@ -14,13 +13,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+// @Version 1.2
 class ProfileFragment : Fragment() {
 
     lateinit var user_name : TextView

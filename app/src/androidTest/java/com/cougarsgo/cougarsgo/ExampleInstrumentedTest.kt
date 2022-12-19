@@ -1,4 +1,4 @@
-package com.example.cougarsgo
+package com.cougarsgo.cougarsgo
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

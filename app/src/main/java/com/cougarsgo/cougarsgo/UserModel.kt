@@ -1,5 +1,5 @@
-package com.example.cougarsgo
-
+package com.cougarsgo.cougarsgo
+// @Version 1.2
 class UserModel(
     var id: String = "",
     var username: String="",
@@ -7,8 +7,4 @@ class UserModel(
     var password: String ="",
     var listingsID: ArrayList<String> = ArrayList(),
     var rating: Float = 5F,
-) {
-    init {
-
-    }
-}
+) {}

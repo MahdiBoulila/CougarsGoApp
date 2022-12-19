@@ -1,4 +1,4 @@
-package com.example.cougarsgo
+package com.cougarsgo.cougarsgo
 
 import android.os.Bundle
 import android.util.Log
@@ -9,10 +9,9 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import org.w3c.dom.Text
 import java.util.*
 
-
+// @Version 1.2
 class AddListingFragment : Fragment() {
     lateinit var add_name: EditText
     lateinit var add_description: EditText

@@ -1,4 +1,4 @@
-package com.example.cougarsgo
+package com.cougarsgo.cougarsgo
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,8 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import kotlin.random.Random
-
+// @Version 1.2
 class LoginFragment : Fragment() {
     lateinit var email_edittext: EditText
     lateinit var password_edittext: EditText

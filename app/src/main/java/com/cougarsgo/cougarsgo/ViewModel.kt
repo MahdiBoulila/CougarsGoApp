@@ -1,5 +1,4 @@
-package com.example.cougarsgo
-import android.util.Log
+package com.cougarsgo.cougarsgo
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.database.DataSnapshot
@@ -8,7 +7,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-
+// @Version 1.2
 class ViewModel: ViewModel(), ValueEventListener {
     val database = MutableLiveData<DatabaseReference>()
     val listings = MutableLiveData<ArrayList<ListingModel>>()

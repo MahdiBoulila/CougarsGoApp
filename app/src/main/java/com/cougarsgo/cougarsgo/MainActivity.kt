@@ -1,8 +1,7 @@
-package com.example.cougarsgo
+package com.cougarsgo.cougarsgo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -10,12 +9,10 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-// @Version 1.1
+// @Version 1.2
 class MainActivity : AppCompatActivity() {
 
     // lateinit var user_name : TextView

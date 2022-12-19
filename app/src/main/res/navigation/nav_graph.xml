@@ -6,12 +6,12 @@
     app:startDestination="@+id/listingsFragment">
     <fragment
         android:id="@+id/signupFragment2"
-        android:name="com.example.cougarsgo.SignupFragment"
+        android:name="com.cougarsgo.cougarsgo.SignupFragment"
         android:label="SignupFragment"
         tools:layout="@layout/signup_page"/>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.cougarsgo.LoginFragment"
+        android:name="com.cougarsgo.cougarsgo.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/login_page"/>
     <action
@@ -19,7 +19,7 @@
         app:destination="@id/signupFragment2" />
     <fragment
         android:id="@+id/listingsFragment"
-        android:name="com.example.cougarsgo.ListingsFragment"
+        android:name="com.cougarsgo.cougarsgo.ListingsFragment"
         android:label="fragment_listings"
         tools:layout="@layout/fragment_listings" />
     <action
@@ -30,7 +30,7 @@
         app:destination="@id/listingsFragment" />
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.cougarsgo.DetailFragment"
+        android:name="com.cougarsgo.cougarsgo.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
     <action
@@ -38,12 +38,12 @@
         app:destination="@id/detailFragment" />
     <fragment
         android:id="@+id/addListingFragment"
-        android:name="com.example.cougarsgo.AddListingFragment"
+        android:name="com.cougarsgo.cougarsgo.AddListingFragment"
         android:label="fragment_add_listing"
         tools:layout="@layout/fragment_add_listing" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.cougarsgo.ProfileFragment"
+        android:name="com.cougarsgo.cougarsgo.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <action

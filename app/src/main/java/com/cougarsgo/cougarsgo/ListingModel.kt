@@ -1,5 +1,5 @@
-package com.example.cougarsgo
-
+package com.cougarsgo.cougarsgo
+// @Version 1.2
 class ListingModel(
     var id: String = "",
     var name: String = "",
@@ -8,5 +8,4 @@ class ListingModel(
     var price: Int = 0 ,
     var color: String = "white",
     var category: String = "",
-) {
-}
+) {}

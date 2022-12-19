@@ -1,4 +1,4 @@
-package com.example.cougarsgo
+package com.cougarsgo.cougarsgo
 
 import org.junit.Test
 

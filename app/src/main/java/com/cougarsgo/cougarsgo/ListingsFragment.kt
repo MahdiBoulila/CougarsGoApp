@@ -1,4 +1,4 @@
-package com.example.cougarsgo
+package com.cougarsgo.cougarsgo
 
 import android.os.Bundle
 import android.util.Log
@@ -6,19 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ListingsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+// @Version 1.2
 class ListingsFragment : Fragment() {
 
     lateinit var list_recyclerView: RecyclerView

@@ -1,4 +1,4 @@
-package com.example.cougarsgo
+package com.cougarsgo.cougarsgo
 
 
 import android.util.Log
@@ -8,10 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.RecyclerView
-
-
+// @Version 1.2
 class RecyclerViewAdapter(var listingArray: Array<ListingModel>) : RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder>(){
 
     lateinit var onClick: (ListingModel) -> Unit
@@ -50,7 +48,6 @@ class RecyclerViewAdapter(var listingArray: Array<ListingModel>) : RecyclerView.
 
         }
         fun returnImageFromCategory(category : String): Int{
-
             if(category == "Electronics") {
                 return R.drawable.ic_baseline_computer_24
             } else if (category == "Food") {
