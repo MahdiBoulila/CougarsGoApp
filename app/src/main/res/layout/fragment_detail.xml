@@ -8,18 +8,12 @@
         android:layout_height="match_parent"
         android:gravity="center">
 
-        <ScrollView
-            android:id="@+id/detail_scrollview"
+
+        <ImageView
+            android:id="@+id/detail_scrollview_img"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="50dp">
-            <ImageView
-                android:id="@+id/detail_scrollview_img"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background"/>
-        </ScrollView>
+            android:layout_height="300dp"
+            android:src="@drawable/ic_launcher_background"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,7 +64,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".35"
-                    android:text="Seller's Name:"
+                    android:text="Seller:"
                     android:paddingLeft="10dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/tahoma"
@@ -94,7 +88,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".35"
-                    android:text="Product Category:"
+                    android:text="Category:"
                     android:paddingLeft="10dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/tahoma"
@@ -112,31 +106,6 @@
                     android:fontFamily="@font/tahoma"
                     android:textSize="25dp"/>
             </TableRow>
-
-            <TableRow>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".35"
-                    android:text="Condition:"
-                    android:paddingLeft="10dp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/tahoma"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
-                    android:textAlignment="viewEnd"/>
-                <TextView
-                    android:id="@+id/detail_product_condition"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".65"
-                    android:text="Refurbished"
-                    android:paddingLeft="10dp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/tahoma"
-                    android:textSize="25dp"/>
-            </TableRow>
-
             <TableRow>
                 <TextView
                     android:layout_width="0dp"

@@ -47,6 +47,7 @@ class RecyclerViewAdapter(var listingArray: Array<ListingModel>) : RecyclerView.
             }
 
         }
+        // Using category to determine which icon is used for the new listing
         fun returnImageFromCategory(category : String): Int{
             if(category == "Electronics") {
                 return R.drawable.ic_baseline_computer_24

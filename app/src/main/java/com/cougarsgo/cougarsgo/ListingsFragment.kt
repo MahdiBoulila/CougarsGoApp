@@ -54,17 +54,17 @@ class ListingsFragment : Fragment() {
             viewAdapter.notifyDataSetChanged()
         })
 
-        fun filter(text: String): ArrayList<ListingModel> {
+        // Filter based on whatever the user inputs
+        fun filter(search_text: String): ArrayList<ListingModel> {
             val filter_list_by_search: ArrayList<ListingModel> = ArrayList()
-            for (item in viewAdapter.listingArray) {
-                if (item.name.contains(text) || (item.description.contains(text))) {
-                    filter_list_by_search.add(item)
-                    Log.d("filter", item.name)
+            for (listing in viewAdapter.listingArray) {
+                if (listing.name.contains(search_text) || (listing.description.contains(search_text))) {
+                    filter_list_by_search.add(listing)
                 }
             }
             return filter_list_by_search
         }
-
+        // Perform search function using the helper fiter method
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
             android.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {

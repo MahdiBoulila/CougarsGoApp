@@ -55,10 +55,8 @@ class AddListingFragment : Fragment() {
                 override fun onItemSelected(parent: AdapterView<*>,
                                             view: View, position: Int, id: Long) {
                    picked_color = color_dropdown.selectedItem.toString()
-                    // Log.d("color", picked_color)
                 }
                 override fun onNothingSelected(parent: AdapterView<*>) {
-                    // write code to perform some action
                 }
             }
         }
@@ -81,18 +79,42 @@ class AddListingFragment : Fragment() {
                 override fun onItemSelected(parent: AdapterView<*>,
                                             view: View, position: Int, id: Long) {
                     picked_category = product_dropdown.selectedItem.toString()
-                    // Log.d("category", picked_color)
                 }
                 override fun onNothingSelected(parent: AdapterView<*>) {
                 }
             }
         }
 
+        /*
+            When create button is clicked perform:
+                Validation checks
+                Add new listing
+         */
         create_button.setOnClickListener{
             val name = add_name.text.toString()
             val description = add_description.text.toString()
             val price = add_price.text.toString()
 
+            if (name.isEmpty()) {
+                add_name.setError("Product Name is required")
+                add_name.requestFocus()
+                return@setOnClickListener
+            }
+            if (description.isEmpty()) {
+                add_description.setError("Product Description is required")
+                add_description.requestFocus()
+                return@setOnClickListener
+            }
+            if (description.length < 30) {
+                add_description.setError("Minimum description length is 30 characters")
+                add_description.requestFocus()
+                return@setOnClickListener
+            }
+            if (price.isEmpty()) {
+                add_price.setError("Product Price is required")
+                add_price.requestFocus()
+                return@setOnClickListener
+            }
             if ((name.isNotBlank() && description.isNotBlank() && price.isNotBlank())){
                 val id = UUID.randomUUID().toString()
                 val listing = ListingModel(id, name, description, currentUser.id, price.toInt(), picked_color , picked_category)
@@ -101,27 +123,6 @@ class AddListingFragment : Fragment() {
                 Toast.makeText(activity, "Successfully Created A Listing!", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_global_listingsFragment)
                 Log.d("newlisting", listing.toString())
-            } else {
-                if (name.isEmpty()) {
-                    add_name.setError("Product Name is required")
-                    add_name.requestFocus()
-                    return@setOnClickListener
-                }
-                if (description.isEmpty()) {
-                    add_description.setError("Product Description is required")
-                    add_description.requestFocus()
-                    return@setOnClickListener
-                }
-                if (description.length < 30) {
-                    add_description.setError("Minimum description length is 30 characters")
-                    add_description.requestFocus()
-                    return@setOnClickListener
-                }
-                if (price.isEmpty()) {
-                    add_price.setError("Product Price is required")
-                    add_price.requestFocus()
-                    return@setOnClickListener
-                }
             }
         }
     }

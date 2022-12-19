@@ -32,12 +32,14 @@ class LoginFragment : Fragment() {
         login_button = view.findViewById(R.id.login_button)
         email_edittext = view.findViewById(R.id.login_email_edittext)
         password_edittext = view.findViewById(R.id.login_password_edittext)
-        // user_name = view.findViewById(R.id.activity_main_welcome)
-
+        /*
+            When login button is clicked perform:
+                Validation checks
+                Log user into database
+         */
         login_button.setOnClickListener {
             var email = email_edittext.text.toString()
             val password = password_edittext.text.toString()
-            // var username = viewModel.currentUser.value?.username
             if (email.isEmpty()) {
                 email_edittext.setError("Email is required")
                 email_edittext.requestFocus()

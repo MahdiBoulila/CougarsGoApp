@@ -27,6 +27,7 @@ class ViewModel: ViewModel(), ValueEventListener {
         database.value?.addValueEventListener(this)
     }
 
+    // to create user
     fun createUser(user: UserModel) {
         if (user != null) {
             currentUser.value=user
@@ -42,6 +43,7 @@ class ViewModel: ViewModel(), ValueEventListener {
         currentListing.postValue(listing)
     }
 
+    // fetch user by is
     fun getUserFromID(id : String): UserModel?{
         val users = users.value!!
         users.forEach{ user ->
@@ -52,20 +54,27 @@ class ViewModel: ViewModel(), ValueEventListener {
         return null
     }
 
+    // determine who is the current user
     fun setCurrentUser(user: UserModel){
         currentUser.value = user
         currentUser.postValue(user)
     }
+
+    // removes listing value from database
     fun removeCurrentListing(id: String?){
         if(currentListing.value != null){
             database.value?.child("listings")?.child(id.toString())?.removeValue()
         }
     }
+
+    // adds listing value to database
     fun insertNewListing(listing: ListingModel){
         if(currentUser.value != null) {
             database.value?.child("listings")?.child(listing.id.toString())?.setValue(listing)
         }
     }
+
+    // adds listing to the current user using the id
     fun addListingToCurrentUser(id : String){
         if (id != null){
             currentUser.value?.listingsID?.add(id)

@@ -33,19 +33,21 @@ class ProfileFragment : Fragment() {
         user_rating = view.findViewById(R.id.profile_ratingbar)
         user_img = view.findViewById(R.id.profile_img)
         list_recyclerView = view.findViewById(R.id.profile_listing_recycler_view)
-
         viewManger = LinearLayoutManager(activity)
         viewAdapter = RecyclerViewAdapter(viewModel.listings.value!!.toTypedArray())
 
         list_recyclerView.layoutManager = viewManger
         list_recyclerView.adapter = viewAdapter
 
+        // To get detail page
         val onClickLambda:(ListingModel) -> Unit = {
             // Current Listing = the listing that was clicked
             viewModel.getCurrentListing(it)
             findNavController().navigate(R.id.action_global_detailFragment)
         }
         viewAdapter.onClick = onClickLambda
+
+        // Filter to get currentUser profile
         viewModel.currentUser.observe(viewLifecycleOwner, {
             user_name.text = it.username
             user_email.text = it.email + ".edu"
@@ -58,7 +60,10 @@ class ProfileFragment : Fragment() {
             viewAdapter.listingArray = user_listings.toTypedArray()
             viewAdapter.notifyDataSetChanged()
         })
-
+        /*
+            Increase & decrease font size based on which button is clicked. The only values
+            that are increased include product name and email.
+         */
         viewModel.fontsize.observe(viewLifecycleOwner, {
             val fontsize = viewModel.fontsize.value!!
             viewAdapter.fontsize = fontsize

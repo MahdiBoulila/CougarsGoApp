@@ -35,6 +35,11 @@ class SignupFragment : Fragment() {
         password_edittext = view.findViewById(R.id.signup_password_edittext)
         username_edittext = view.findViewById(R.id.signup_username_edittext)
 
+        /*
+            When signup button is clicked perform:
+                Validation checks
+                Create a new account for the user in the database
+         */
         signup_button.setOnClickListener{
             val email = email_edittext.text.toString()
             val password = password_edittext.text.toString()

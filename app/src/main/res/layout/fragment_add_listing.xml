@@ -20,18 +20,6 @@
             android:textStyle="bold"
             android:fontFamily="@font/tahoma"/>
 
-        <TextView
-            android:id="@+id/listing_username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="username"
-            android:layout_marginHorizontal="25dp"
-            android:layout_marginTop="5dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="25dp"
-            android:fontFamily="@font/tahoma"
-            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="match_parent"

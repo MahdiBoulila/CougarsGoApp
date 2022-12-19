@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -23,6 +24,7 @@ class DetailFragment : Fragment() {
     lateinit var detail_category : TextView
     lateinit var detail_price : TextView
     lateinit var detail_color : TextView
+    lateinit var detail_img : ImageView
     lateinit var detail_delete_button : Button
     lateinit var contact_btn: Button
     val viewModel: ViewModel by activityViewModels()
@@ -38,21 +40,49 @@ class DetailFragment : Fragment() {
         detail_color = view.findViewById(R.id.detail_product_color)
         detail_category = view.findViewById(R.id.detail_product_category)
         detail_delete_button = view.findViewById(R.id.detail_delete_button)
+        detail_img = view.findViewById(R.id.detail_scrollview_img)
 
-        //get user from listing's id
+
+        // Get user from listing's id
         val current_listing = viewModel.currentListing.value!!
         val id = current_listing.sellerID
         val seller = viewModel.getUserFromID(id)
 
+        // Find image of current listing
+        fun returnImageFromCategory(category : String): Int {
+            if (category == "Electronics") {
+                return R.drawable.ic_baseline_computer_24
+            } else if (category == "Food") {
+                return R.drawable.ic_baseline_fastfood_24
+            } else if (category == "Clothing") {
+                return R.drawable.ic_baseline_checkroom_24
+            } else if (category == "Cleaning Supplies") {
+                return R.drawable.ic_baseline_cleaning_services_24
+            } else if (category == "Furniture") {
+                return R.drawable.ic_baseline_chair_24
+            } else if (category == "Academic") {
+                return R.drawable.ic_baseline_menu_book_24
+            } else if (category == "Arts and Crafts") {
+                return R.drawable.ic_baseline_format_paint_24
+            } else {
+                return R.drawable.ic_baseline_question_mark_24
+            }
+        }
+
+        // Show detail of current listing
         viewModel.currentListing.observe(viewLifecycleOwner, {
             detail_name.text = it.name
-            seller_name.text = viewModel.currentUser.value?.username
             detail_description.text = it.description
             detail_price.text = it.price.toString()
             detail_color.text = it.color
+            detail_category.text = it.category
+            detail_img.setImageResource(returnImageFromCategory(it.category))
+            seller_name.text = seller?.username
         })
 
-        // Delete button only appears if the listing was created by the current user
+        /*
+            Delete button only appears if the listing was created by the current user
+         */
         detail_delete_button.setVisibility(View.INVISIBLE);
         if (viewModel.currentUser.value?.id == viewModel.currentListing.value?.sellerID) {
             detail_delete_button.setVisibility(View.VISIBLE)
@@ -62,13 +92,17 @@ class DetailFragment : Fragment() {
             }
         }
 
+        /*
+            Increase & decrease font size based on which button is clicked.The only values
+            that are increased include product name, seller name and email.
+         */
         viewModel.fontsize.observe(viewLifecycleOwner, {
             val fontsize = viewModel.fontsize.value!!
             detail_name.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontsize)
             seller_name.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontsize)
             detail_description.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontsize)
         })
-
+        // To reach out to seller
         contact_btn.setOnClickListener{
                 val mailto = "mailto:${seller?.email}" +
                         "?cc=no-reply@cougarsgo.edu" +
